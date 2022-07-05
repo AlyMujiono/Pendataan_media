@@ -1,0 +1,6 @@
+{
+    "require": {
+        "ozdemir/datatables": "^1.7",
+        "mike42/escpos-php": "^2.2"
+    }
+}
