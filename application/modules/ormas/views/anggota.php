@@ -52,13 +52,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                       </div>
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="reset" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</button>
-										<div class="pull-right">
-										<a href="<?=base_url('parpol');?>" class="btn btn-warning"><i class="fa fa-backward"></i> Kembali</a>
-	                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
-                		</div>
-                </div>
             </form>
         </div>
 

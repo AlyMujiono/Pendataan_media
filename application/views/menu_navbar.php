@@ -5,12 +5,11 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-th-list"></i> Ormas
+            <i class="fa fa-th-list"></i> Media
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="<?=base_url('faq');?>">Syarat Ormas</a></li>
-            <li><a class="dropdown-item" href="<?=base_url('data-ormas');?>">Ormas Terdaftar</a></li>
-           
+            <li><a class="dropdown-item" href="<?=base_url('faq');?>">Persyaratan Media</a></li>
+            <li><a class="dropdown-item" href="<?=base_url('data-ormas');?>">Media Terdaftar</a></li>
           </ul>
         </li>
         

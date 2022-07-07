@@ -53,13 +53,9 @@ $route['default_controller'] = 'front';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
-$route['pengajuan-penelitian'] = 'front/pengajuan_penelitian';
 $route['cek-status-pengajuan'] = 'front/cek_status_pengajuan';
 $route['download-berkas-rekomendasi/(:num)'] = 'front/download_berkas_rekomendasi/$1';
 $route['faq'] = 'front/faq';
 $route['pengaduan'] = 'front/pengaduan';
-$route['news'] = 'front/berita';
-$route['news/page/(:num)'] = 'front/berita/$1';
-$route['news/(:num)'] = 'front/detail_berita/$1';
 $route['data-ormas'] = 'front/ormas';
 $route['page/(:num)'] = 'front/detail_halaman/$1';

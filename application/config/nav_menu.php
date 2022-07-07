@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $config['nav_menu'] = array(
     array(
@@ -11,14 +11,8 @@ $config['nav_menu'] = array(
     array(
         'access_code' => 'admin.ormas.view',
         'uri' => 'ormas',
-        'label' => 'Daftar Ormas',
+        'label' => 'Daftar Media',
         'icon' => 'fa fa-flag-o'
-    ),
-    array(
-        'access_code' => 'admin.halaman.view',
-        'uri' => 'halaman',
-        'label' => 'Halaman Statis',
-        'icon' => 'fa fa-file-o'
     ),
     array(
         'access_code' => 'admin.pesan.view',
@@ -27,10 +21,10 @@ $config['nav_menu'] = array(
         'icon' => 'fa fa-envelope'
     ),
     array(
-        'access_code' => array('admin.pengaturan.identitas','admin.user.view', 'admin.hak_akses.view'),
+        'access_code' => array('admin.pengaturan.identitas', 'admin.user.view', 'admin.hak_akses.view'),
         'label' => 'Pengaturan',
         'icon' => 'fa fa-cogs',
-        'class' => array('pengaturan','user', 'hak_akses'),
+        'class' => array('pengaturan', 'user', 'hak_akses'),
         'sub_menu' => array(
             array(
                 'access_code' => 'admin.pengaturan.identitas',

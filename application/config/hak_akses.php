@@ -14,36 +14,12 @@ $config['hak_akses'] = array(
         'admin.ormas.update' => 'Edit Data',
         'admin.ormas.delete' => 'Hapus Data'
     ),
-    //Modul Ormas
-    'Daftar Berita' => array(
-        'admin.berita.view' => 'Lihat Data',
-        'admin.berita.add' => 'Tambah Data',
-        'admin.berita.update' => 'Edit Data',
-        'admin.berita.delete' => 'Hapus Data'
-    ),
-
-    //Halaman Statis
-    'Halaman Statis' => array(
-        'admin.halaman.view' => 'Lihat Data',
-        'admin.halaman.add' => 'Tambah Data',
-        'admin.halaman.update' => 'Edit Data',
-        'admin.halaman.delete' => 'Hapus Data'
-    ),
-
     //Pesan Masuk
     'Pesan Masuk' => array(
         'admin.pesan.view' => 'Lihat Data',
         'admin.pesan.add' => 'Tambah Data',
         'admin.pesan.update' => 'Edit Data',
         'admin.pesan.delete' => 'Hapus Data'
-    ),
-
-    //Modul Ormas
-    'Daftar Pengajuan Penelitian' => array(
-        'admin.penelitian.view' => 'Lihat Data',
-        'admin.penelitian.add' => 'Tambah Data',
-        'admin.penelitian.update' => 'Edit Data',
-        'admin.penelitian.delete' => 'Hapus Data'
     ),
 
     //Modul User

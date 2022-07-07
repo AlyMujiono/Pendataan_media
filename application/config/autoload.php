@@ -156,10 +156,7 @@ $autoload['model'] = array(
     'user/user_m',
     'hak_akses/level_m',
     'pengaturan/pengaturan_m',
-    'berita/berita_m',
     'halaman/halaman_m',
-    'parpol/parpol_m',
     'ormas/ormas_m',
-    'penelitian/penelitian_m',
     'pesan/pesan_m'
 );
