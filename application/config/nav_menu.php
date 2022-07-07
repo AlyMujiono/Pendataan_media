@@ -15,24 +15,6 @@ $config['nav_menu'] = array(
         'icon' => 'fa fa-flag-o'
     ),
     array(
-        'access_code' => 'admin.parpol.view',
-        'uri' => 'parpol',
-        'label' => 'Daftar Partai Politik',
-        'icon' => 'fa fa-flag-checkered'
-    ),
-    array(
-        'access_code' => 'admin.penelitian.view',
-        'uri' => 'penelitian',
-        'label' => 'Pengajuan Penelitian',
-        'icon' => 'fa fa-graduation-cap'
-    ),
-    array(
-        'access_code' => 'admin.berita.view',
-        'uri' => 'berita',
-        'label' => 'Daftar Berita',
-        'icon' => 'fa fa-newspaper-o'
-    ),
-    array(
         'access_code' => 'admin.halaman.view',
         'uri' => 'halaman',
         'label' => 'Halaman Statis',

@@ -50,7 +50,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body text-center">
-                        <span class="text-secondary">&copy; 2021 Kesbangpol Kota Lubuklinggau</span>
+                        <span class="text-secondary">&copy; 2022 Pendataan Media Kota Lubuklinggau</span>
                     </div>
                 </div>
             </div>

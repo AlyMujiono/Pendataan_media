@@ -14,15 +14,6 @@ $config['hak_akses'] = array(
         'admin.ormas.update' => 'Edit Data',
         'admin.ormas.delete' => 'Hapus Data'
     ),
-
-    //Modul Partai Politik
-    'Daftar Partai Politik' => array(
-        'admin.parpol.view' => 'Lihat Data',
-        'admin.parpol.add' => 'Tambah Data',
-        'admin.parpol.update' => 'Edit Data',
-        'admin.parpol.delete' => 'Hapus Data'
-    ),
-
     //Modul Ormas
     'Daftar Berita' => array(
         'admin.berita.view' => 'Lihat Data',

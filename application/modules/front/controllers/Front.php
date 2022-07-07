@@ -150,50 +150,6 @@ class Front extends CI_Controller {
 	    readfile($filename);
 	}
 
-	public function pengaduan()
-	{
-		if(!isset($_POST['captcha'])){
-			$bil1 = rand(1,9);
-			$bil2 = rand(1,9);
-			$captcha_tanya = "$bil1 + $bil2";
-			$captcha_jawab = $bil1 + $bil2;
-
-			$this->session->set_userdata(['captcha_tanya'=>$captcha_tanya, 'captcha_jawab'=>$captcha_jawab]);
-		}
-
-		if($this->input->method(TRUE)=='POST')
-		{
-			if($this->input->post('captcha')!=$this->session->userdata('captcha_jawab')){
-				$danger = '<h4><i class="icon fa fa-ban"></i> Ups!</h4> Kode Captcha yang Anda masukan salah.';
-				ce_set_msg('danger', $danger);
-			} else {
-				$post_data['nama'] = $this->input->post('nama');
-				$post_data['no_telp'] = $this->input->post('no_telp');
-				$post_data['subjek'] = $this->input->post('subjek');
-				$post_data['isi_pesan'] = $this->input->post('isi_pesan');
-
-				if($this->pesan_m->pesan_insert_data($post_data))
-				{
-					$success = '<h4><i class="icon fa fa-check"></i> Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
-					ce_set_msg('success', $success);
-				} else {
-					$danger = '<h4><i class="icon fa fa-ban"></i> Ups!</h4> Data yang Anda masukan gagal tersimpan.';
-					ce_set_msg('danger', $danger);
-				}
-			}
-
-			redirect('pengaduan');
-		}
-
-		$data['halaman'] = 'pengaduan';
-		$data['header'] = '<div class="bg-info text-white text-center p-4">
-				<h1>Layanan Pengaduan</h1>
-				<p>Anda dapat mengajukan pengaduan kepada kami</p>
-		</div>';
-
-		$this->load->view('template_front', $data);
-	}
-
 	public function ormas()
 	{
 		$data['ormaslist'] = $this->ormas_m->ormas_get_all_active();
