@@ -8,8 +8,9 @@
             <i class="fa fa-th-list"></i> Media
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="<?=base_url('faq');?>">Persyaratan Media</a></li>
+            <li><a class="dropdown-item" href="<?=base_url('faq');?>">Syarat Media</a></li>
             <li><a class="dropdown-item" href="<?=base_url('data-ormas');?>">Media Terdaftar</a></li>
+           
           </ul>
         </li>
         

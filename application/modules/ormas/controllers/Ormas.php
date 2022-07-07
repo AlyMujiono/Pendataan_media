@@ -23,7 +23,7 @@ class Ormas extends CI_Controller {
 		$data['javascript'] = array(
 			'js/js_datatable' => array('ajax_url' => base_url('ormas/ajax_data'))
 		);
-		$data['header'] = 'Organisasi Masyarakat <small>Index Data</small>';
+		$data['header'] = 'Media<small>Index Data</small>';
 
 		$this->load->view('template', $data);
 	}
@@ -179,7 +179,7 @@ class Ormas extends CI_Controller {
 		$data['id_ormas'] = $id;
 		$data['anggotalist'] = $this->ormas_m->anggota_by_ormas($id);
 		$data['halaman'] = 'anggota';
-		$data['header'] = 'Organisasi Masyarakat <small>Anggota Ormas</small>';
+		$data['header'] = 'Organisasi Masyarakat <small>Anggota Media</small>';
 
 		$this->load->view('template', $data);
 	}
@@ -292,7 +292,6 @@ class Ormas extends CI_Controller {
 								Aksi <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu pull-right" role="menu">
-									<li>'.ce_anchor('admin.ormas.view', 'ormas/anggota/'.$field->id, '<i class="fa fa-users"></i>Daftar Anggota').'</li>
 									<li>'.ce_anchor('admin.ormas.view', 'ormas/syarat/'.$field->id, '<i class="fa fa-legal"></i>Persyaratan').'</li>
 									<li class="divider"></li>
 									<li>'.ce_anchor('admin.ormas.update', 'ormas/edit/'.$field->id, '<i class="fa fa-edit"></i>Edit Data').'</li>

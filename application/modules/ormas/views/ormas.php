@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<?= ce_msg('danger'); ?>
 		<div class="box box-default">
 			<div class="box-header with-border">
-				<h3 class="box-title">Daftar Organisasi Masyarakat</h3>
+				<h3 class="box-title">Daftar Media</h3>
 				<div class="box-tools">
 					<?= ce_anchor('admin.ormas.add', 'ormas/tambah', '<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary btn-sm"'); ?>
 				</div>

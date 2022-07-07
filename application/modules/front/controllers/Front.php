@@ -26,14 +26,13 @@ class Front extends CI_Controller {
 		$this->load->view('template_front', $data);
 	}
 
-
 	public function ormas()
 	{
 		$data['ormaslist'] = $this->ormas_m->ormas_get_all_active();
 		$data['halaman'] = 'ormas';
 		$data['header'] = '<div class="bg-info text-white text-center p-4">
-				<h1>Data Organisasi Masyarakat</h1>
-				<p>Informasi data Organisasi Masyarakat yang terdaftar di sistem kami</p>
+				<h1>Data Media</h1>
+				<p>Informasi data Media yang terdaftar di sistem kami</p>
 		</div>';
 
 		$this->load->view('template_front', $data);
@@ -41,15 +40,15 @@ class Front extends CI_Controller {
 
 	public function detail_halaman($id)
 	{
-		$detail = $this->halaman_m->halaman_by_id($id);
-		if(!$detail){
-			show_404();
-			exit;
-		}
+		 $detail = $this->halaman_m->halaman_by_id($id);
+		 if(!$detail){
+			 show_404();
+			 exit;
+		 }
 
-		$data['pages'] = $detail;
-		$data['halaman'] = 'detail_halaman';
+		 $data['pages'] = $detail;
+		 $data['halaman'] = 'detail_halaman';
 
-		$this->load->view('template_front', $data);
+		 $this->load->view('template_front', $data);
 	}
 }

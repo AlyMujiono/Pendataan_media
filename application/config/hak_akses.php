@@ -14,6 +14,15 @@ $config['hak_akses'] = array(
         'admin.ormas.update' => 'Edit Data',
         'admin.ormas.delete' => 'Hapus Data'
     ),
+
+    //Halaman Statis
+    'Halaman Statis' => array(
+        'admin.halaman.view' => 'Lihat Data',
+        'admin.halaman.add' => 'Tambah Data',
+        'admin.halaman.update' => 'Edit Data',
+        'admin.halaman.delete' => 'Hapus Data'
+    ),
+
     //Pesan Masuk
     'Pesan Masuk' => array(
         'admin.pesan.view' => 'Lihat Data',

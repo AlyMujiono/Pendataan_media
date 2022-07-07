@@ -54,47 +54,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
             </form>
         </div>
-
-		<div class="box box-default">
-			<div class="box-header with-border">
-				<h3 class="box-title">Daftar Anggota</h3>
-			</div>
-			<div class="box-body table-responsive no-padding">
-				<table class="table table-striped tableData">
-					<thead>
-						<tr>
-							<th style="width:10px;">#</th>
-							<th>Nama Anggota</th>
-							<th>Jabatan</th>
-							<th>TTL</th>
-							<th>JK</th>
-							<th>Alamat</th>
-							<th>Status</th>
-							<th style="width:50px;"></th>
-						</tr>
-					</thead>
-					<tbody>
-					<?php
-					if($anggotalist){
-						$no=1;
-						foreach($anggotalist as $row){
-							echo '<tr>
-								<td>'.$no.'</td>
-								<td>'.$row->nama.'</td>
-								<td>'.$row->jabatan.'</td>
-								<td>'.$row->ttl.'</td>
-								<td>'.$row->jk.'</td>
-								<td>'.$row->alamat.'</td>
-								<td>'.ce_boolean($row->status, '<span class="label label-danger">Non-Aktif</span>|<span class="label label-success">Aktif</span>').'</td>
-								<td>'.ce_anchor('admin.ormas.delete', 'ormas/hapus-anggota/'.$row->id_ormas.'/'.$row->id, '<i class="fa fa-trash"></i>', 'class="btn btn-sm btn-danger" onclick="return delete_confirm();"').'</td>
-							</tr>';
-							$no++;
-						}
-					}
-					?>
-					</tbody>
-				</table>
-			</div>
-		</div>
 	</div>
 </div>

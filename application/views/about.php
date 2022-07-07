@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="box-body ">
                 <dl class="dl-horizontal">
                     <dt>Nama</dt>
-                    <dd>Sistem Informasi Pendataan Organisasi Kemasyarakatan</dd>
+                    <dd>Sistem Informasi Pendataan Media</dd>
                     <dt>Versi</dt>
                     <dd>1.0</dd>
                     <dt>Lisensi</dt>
