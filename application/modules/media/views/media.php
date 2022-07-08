@@ -18,8 +18,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<tr>
 							<th style="width:10px;">#</th>
 							<th>Nama Media</th>
-							<th>Bentuk Organisasi</th>
-							<th>Sifat Organisasi</th>
+							<th>Website</th>
+							<th>Nama Perusahaan</th>
 							<th>Verifikasi</th>
 							<th>Status</th>
 							<th style="width:10px;"></th>

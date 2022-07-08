@@ -33,9 +33,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   foreach ($medialist as $row):?>
                   <tr>
                     <td><img src="<?=base_url('assets/img/'.$row->lambang);?>" class="img-fluid img-thumbnail" width="50"></td>
-                    <td><?=$row->nama_organisasi;?></td>
-                    <td><?=$row->bentuk_organisasi;?></td>
-                    <td><?=$row->sifat_organisasi;?></td>
+                    <td><?=$row->nama_media;?></td>
+                    <td><?=$row->website;?></td>
+                    <td><?=$row->nama_perusahaan;?></td>
                     <td><?=$row->tgl_berlaku;?></td>
                     <td><?=$row->ketua;?></td>
                     <td><?=$row->sekretaris;?></td>

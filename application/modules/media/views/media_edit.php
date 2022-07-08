@@ -25,30 +25,30 @@ $sifatorganisasi = [
             <form method="post" action="" class="form-horizontal" enctype="multipart/form-data">
                 <div class="box-body">
                     <div class="form-group">
-                      <label for="nama_organisasi" class="col-sm-2 control-label">Nama Organisasi <span class="text-danger">*</span></label>
+                      <label for="nama_media" class="col-sm-2 control-label">Nama Organisasi <span class="text-danger">*</span></label>
                       <div class="col-sm-8">
-                        <input type="text" name="nama_organisasi" class="form-control" id="nama_organisasi" value="<?= $media->nama_organisasi; ?>" required>
+                        <input type="text" name="nama_media" class="form-control" id="nama_media" value="<?= $media->nama_media; ?>" required>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="bentuk_organisasi" class="col-sm-2 control-label">Bentuk Organisasi <span class="text-danger">*</span></label>
+                      <label for="website" class="col-sm-2 control-label">Bentuk Organisasi <span class="text-danger">*</span></label>
                       <div class="col-sm-8">
-                        <select name="bentuk_organisasi" class="form-control select2" required>
+                        <select name="website" class="form-control select2" required>
                           <option value="">- Pilih Bentuk -</option>
                           <?php foreach ($bentukorganisasi as $bentuk) {
-                            $selected = $media->bentuk_organisasi==$bentuk ? 'selected' : '';
+                            $selected = $media->website==$bentuk ? 'selected' : '';
                             echo "<option value='$bentuk' $selected>$bentuk</option>";
                           }?>
                         </select>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="sifat_organisasi" class="col-sm-2 control-label">Sifat Organisasi <span class="text-danger">*</span></label>
+                      <label for="nama_perusahaan" class="col-sm-2 control-label">Sifat Organisasi <span class="text-danger">*</span></label>
                       <div class="col-sm-8">
-                        <select name="sifat_organisasi" class="form-control select2" required>
+                        <select name="nama_perusahaan" class="form-control select2" required>
                           <option value="">- Pilih Sifat -</option>
                           <?php foreach ($sifatorganisasi as $sifat) {
-                            $selected = $media->sifat_organisasi==$sifat ? 'selected' : '';
+                            $selected = $media->nama_perusahaan==$sifat ? 'selected' : '';
                             echo "<option value='$sifat' $selected>$sifat</option>";
                           }?>
                         </select>

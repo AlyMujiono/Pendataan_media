@@ -36,9 +36,9 @@ class Media extends CI_Controller {
 		{
 			$post_data['id'] = rand(100, 999).date('dmYHis');
 			$post_data['id_user'] = $this->session->userdata('id_user');
-			$post_data['nama_organisasi'] = $this->input->post('nama_organisasi');
-			$post_data['bentuk_organisasi'] = $this->input->post('bentuk_organisasi');
-			$post_data['sifat_organisasi'] = $this->input->post('sifat_organisasi');
+			$post_data['nama_media'] = $this->input->post('nama_media');
+			$post_data['website'] = $this->input->post('website');
+			$post_data['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 			$post_data['no_ahuskt'] = $this->input->post('no_ahuskt');
 			$post_data['ttp'] = $this->input->post('ttp');
 			$post_data['notaris'] = $this->input->post('notaris');
@@ -96,9 +96,9 @@ class Media extends CI_Controller {
 		if($this->input->method(TRUE)=='POST')
 		{
 			$post_data['id_user'] = $this->session->userdata('id_user');
-			$post_data['nama_organisasi'] = $this->input->post('nama_organisasi');
-			$post_data['bentuk_organisasi'] = $this->input->post('bentuk_organisasi');
-			$post_data['sifat_organisasi'] = $this->input->post('sifat_organisasi');
+			$post_data['nama_media'] = $this->input->post('nama_media');
+			$post_data['website'] = $this->input->post('website');
+			$post_data['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 			$post_data['no_ahuskt'] = $this->input->post('no_ahuskt');
 			$post_data['ttp'] = $this->input->post('ttp');
 			$post_data['notaris'] = $this->input->post('notaris');
@@ -266,8 +266,8 @@ class Media extends CI_Controller {
 
 		$dataConfig = array(
 			'table' => 'media',
-			'column_order' => array(null,'nama_organisasi','bentuk_organisasi','sifat_organisasi',null),
-			'column_search' => array('nama_organisasi','bentuk_organisasi','sifat_organisasi'),
+			'column_order' => array(null,'nama_media','website','nama_perusahaan',null),
+			'column_search' => array('nama_media','website','nama_perusahaan'),
 			'order' => array('id' => 'asc')
 		);
 		if($this->session->userdata('level')=='member')
@@ -282,9 +282,9 @@ class Media extends CI_Controller {
             $no++;
 						$row = array();
 						$row[] = $no;
-						$row[] = $field->nama_organisasi;
-						$row[] = $field->bentuk_organisasi;
-						$row[] = $field->sifat_organisasi;
+						$row[] = $field->nama_media;
+						$row[] = $field->website;
+						$row[] = $field->nama_perusahaan;
 						$row[] = ce_boolean($field->verifikasi, '<span class="label label-danger">Tidak</span>|<span class="label label-success">Ya</span>');
 						$row[] = ce_boolean($field->status, '<span class="label label-danger">Non-Aktif</span>|<span class="label label-success">Aktif</span>');
 						$button = '<div class="btn-group pull-right">
