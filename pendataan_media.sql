@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2022 pada 09.12
+-- Waktu pembuatan: 08 Jul 2022 pada 09.55
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.3.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `media`
+-- Database: `pendataan_media`
 --
 
 -- --------------------------------------------------------
@@ -82,6 +82,44 @@ INSERT INTO `level` (`id_level`, `unikode`, `level`, `hak_akses`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `media`
+--
+
+CREATE TABLE `media` (
+  `id` varchar(20) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nama_media` varchar(200) NOT NULL,
+  `website` varchar(200) NOT NULL,
+  `nama_perusahaan` varchar(200) NOT NULL,
+  `no_ahuskt` varchar(200) NOT NULL,
+  `ttp` varchar(200) NOT NULL,
+  `notaris` varchar(255) NOT NULL,
+  `no_permohonan` varchar(200) NOT NULL COMMENT '7.	Nomor dan tanggal surat permohonan',
+  `sumber_dana` varchar(200) NOT NULL,
+  `no_npwp` varchar(200) NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
+  `ketua` varchar(200) NOT NULL,
+  `sekretaris` varchar(200) NOT NULL,
+  `bendahara` varchar(200) NOT NULL,
+  `lambang` varchar(200) NOT NULL,
+  `no_berlaku` varchar(200) NOT NULL,
+  `tgl_berlaku` varchar(100) NOT NULL,
+  `tgl_verifikasi` date DEFAULT NULL,
+  `verifikasi` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 = BELUM VERIFIKASI 1 = TERVERIFIKASI',
+  `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 = NON AKTIFI 1 = AKTIF'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `media`
+--
+
+INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `no_ahuskt`, `ttp`, `notaris`, `no_permohonan`, `sumber_dana`, `no_npwp`, `no_telp`, `alamat`, `ketua`, `sekretaris`, `bendahara`, `lambang`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
+('82808072022144618', 1, 'uhasas', 'Yayasan', 'Sosial kontrol dan Hukum', '4324342', 'fgdgddfg', 'gfdfdf', '12738212', 'fdfgd', '1286383', '121873', 'kuukhjhklhk', 'akshdjkashasd', 'lasdjlajsad', 'iuioaeowe', '', '36465', '24234', '2022-07-08', 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `opsi`
 --
 
@@ -111,37 +149,6 @@ INSERT INTO `opsi` (`id_opsi`, `kunci`, `nilai`) VALUES
 (13, 'kota', 'Kota Lubuklinggau'),
 (14, 'kecamatan', 'Lubuklinggau Barat I'),
 (15, 'kontak', '<p style=\"text-align:center\">Dibawah ini adalah nomor call center yang dapat Anda hubungi.</p>\r\n\r\n<table cellspacing=\"0\" class=\"table table-bordered table-striped\" style=\"width:100%\">\r\n	<thead>\r\n		<tr>\r\n			<th>No.</th>\r\n			<th>Kota/Kab</th>\r\n			<th>CALL CENTER</th>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td><strong>1</strong></td>\r\n			<td>Kabupaten Bandung</td>\r\n			<td>0821 1821 9287</td>\r\n		</tr>\r\n		<tr>\r\n			<td><strong>2</strong></td>\r\n			<td>Kabupaten Musirawas Barat</td>\r\n			<td>0895 2243 4611</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `media`
---
-
-CREATE TABLE `media` (
-  `id` varchar(20) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `nama_organisasi` varchar(200) NOT NULL,
-  `bentuk_organisasi` varchar(200) NOT NULL,
-  `sifat_organisasi` varchar(200) NOT NULL,
-  `no_ahuskt` varchar(200) NOT NULL,
-  `ttp` varchar(200) NOT NULL,
-  `notaris` varchar(255) NOT NULL,
-  `no_permohonan` varchar(200) NOT NULL COMMENT '7.	Nomor dan tanggal surat permohonan',
-  `sumber_dana` varchar(200) NOT NULL,
-  `no_npwp` varchar(200) NOT NULL,
-  `no_telp` varchar(20) NOT NULL,
-  `alamat` text NOT NULL,
-  `ketua` varchar(200) NOT NULL,
-  `sekretaris` varchar(200) NOT NULL,
-  `bendahara` varchar(200) NOT NULL,
-  `lambang` varchar(200) NOT NULL,
-  `no_berlaku` varchar(200) NOT NULL,
-  `tgl_berlaku` varchar(100) NOT NULL,
-  `tgl_verifikasi` date DEFAULT NULL,
-  `verifikasi` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 = BELUM VERIFIKASI 1 = TERVERIFIKASI',
-  `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 = NON AKTIFI 1 = AKTIF'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -196,8 +203,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `id_level`, `foto`, `username`, `password`, `nama`, `email`, `no_telp`, `alamat`, `blokir`) VALUES
 (1, 1, 'foto_admin.png', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'yogisparingga@gmail.com', '081366997008', 'Kp. Galanggang, Kec. Batujajar, Kab. Bandung Kulon', 0),
-(33, 6, 'avatar.png', 'yogi', '938e14c074c45c62eb15cc05a6f36d79', 'yghi ade s', '', '', '', 1),
-(34, 6, 'avatar.png', '12345', '827ccb0eea8a706c4c34a16891f84e7b', 'ali', '', '', '', 0);
+(36, 6, 'avatar.png', 'tiwi', '8751139513877752980fb2996012af64', 'tiwi', '', '', '', 1);
 
 --
 -- Indexes for dumped tables
@@ -222,19 +228,19 @@ ALTER TABLE `level`
   ADD PRIMARY KEY (`id_level`);
 
 --
--- Indeks untuk tabel `opsi`
---
-ALTER TABLE `opsi`
-  ADD PRIMARY KEY (`id_opsi`),
-  ADD KEY `kunci` (`kunci`);
-
---
 -- Indeks untuk tabel `media`
 --
 ALTER TABLE `media`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `verifikasi` (`verifikasi`,`status`);
+
+--
+-- Indeks untuk tabel `opsi`
+--
+ALTER TABLE `opsi`
+  ADD PRIMARY KEY (`id_opsi`),
+  ADD KEY `kunci` (`kunci`);
 
 --
 -- Indeks untuk tabel `pesan`
@@ -302,7 +308,7 @@ ALTER TABLE `syarat_media`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
