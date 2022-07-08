@@ -29,8 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </tr>
                   </thead>
                   <tbody>
-                  <?php if($ormaslist):
-                  foreach ($ormaslist as $row):?>
+                  <?php if($medialist):
+                  foreach ($medialist as $row):?>
                   <tr>
                     <td><img src="<?=base_url('assets/img/'.$row->lambang);?>" class="img-fluid img-thumbnail" width="50"></td>
                     <td><?=$row->nama_organisasi;?></td>

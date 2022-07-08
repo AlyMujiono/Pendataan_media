@@ -26,10 +26,10 @@ class Front extends CI_Controller {
 		$this->load->view('template_front', $data);
 	}
 
-	public function ormas()
+	public function media()
 	{
-		$data['ormaslist'] = $this->ormas_m->ormas_get_all_active();
-		$data['halaman'] = 'ormas';
+		$data['medialist'] = $this->media_m->media_get_all_active();
+		$data['halaman'] = 'media';
 		$data['header'] = '<div class="bg-info text-white text-center p-4">
 				<h1>Data Media</h1>
 				<p>Informasi data Media yang terdaftar di sistem kami</p>

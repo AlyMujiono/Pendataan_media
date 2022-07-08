@@ -9,8 +9,8 @@ $config['nav_menu'] = array(
         'icon' => 'fa fa-dashboard'
     ),
     array(
-        'access_code' => 'admin.ormas.view',
-        'uri' => 'ormas',
+        'access_code' => 'admin.media.view',
+        'uri' => 'media',
         'label' => 'Daftar Media',
         'icon' => 'fa fa-flag-o'
     ),

@@ -55,5 +55,5 @@ $route['translate_uri_dashes'] = TRUE;
 $route['cek-status-pengajuan'] = 'front/cek_status_pengajuan';
 $route['download-berkas-rekomendasi/(:num)'] = 'front/download_berkas_rekomendasi/$1';
 $route['faq'] = 'front/faq';
-$route['data-ormas'] = 'front/ormas';
+$route['data-media'] = 'front/media';
 $route['page/(:num)'] = 'front/detail_halaman/$1';

@@ -157,6 +157,6 @@ $autoload['model'] = array(
     'hak_akses/level_m',
     'pengaturan/pengaturan_m',
     'halaman/halaman_m',
-    'ormas/ormas_m',
+    'media/media_m',
     'pesan/pesan_m'
 );

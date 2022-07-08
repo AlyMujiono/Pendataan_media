@@ -7,12 +7,12 @@ $config['hak_akses'] = array(
         'admin.beranda.view' => 'Lihat Beranda'
     ),
 
-    //Modul Ormas
-    'Daftar Ormas' => array(
-        'admin.ormas.view' => 'Lihat Data',
-        'admin.ormas.add' => 'Tambah Data',
-        'admin.ormas.update' => 'Edit Data',
-        'admin.ormas.delete' => 'Hapus Data'
+    //Modul Media
+    'Daftar Media' => array(
+        'admin.media.view' => 'Lihat Data',
+        'admin.media.add' => 'Tambah Data',
+        'admin.media.update' => 'Edit Data',
+        'admin.media.delete' => 'Hapus Data'
     ),
 
     //Halaman Statis

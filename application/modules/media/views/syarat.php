@@ -7,7 +7,7 @@ $persyaratan = [
 	"BERKAS AKTA NOTARIS",
 	"AD/RT ORGANISASI",
 	"PROGRAM KERJA ORGANISASI",
-	"SK PENGURUS ORMAS DARI DPP/DPD BERDASARKAN AHU ATAU SKT DARI KEMENTRIAN",
+	"SK PENGURUS media DARI DPP/DPD BERDASARKAN AHU ATAU SKT DARI KEMENTRIAN",
 	"SURAT BUKTI KONTRAK ATAU MILIK PRIBADI KANTOR SEKRETARIAT",
 	"FOTO KANTOR TAMPAK DEPAN",
 	"NPWP ORGANISASI",
@@ -55,7 +55,7 @@ $persyaratan = [
                 <div class="box-footer">
                     <button type="reset" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</button>
 										<div class="pull-right">
-										<a href="<?=base_url('ormas');?>" class="btn btn-warning"><i class="fa fa-backward"></i> Kembali</a>
+										<a href="<?=base_url('media');?>" class="btn btn-warning"><i class="fa fa-backward"></i> Kembali</a>
 	                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                 		</div>
                 </div>
@@ -86,7 +86,7 @@ $persyaratan = [
 								<td>'.$no.'</td>
 								<td>'.$row->nama.'</td>
 								<td>'.$berkas.'</td>
-								<td>'.ce_anchor('admin.ormas.delete', 'ormas/hapus-syarat/'.$row->id_ormas.'/'.$row->id, '<i class="fa fa-trash"></i>', 'class="btn btn-sm btn-danger" onclick="return delete_confirm();"').'</td>
+								<td>'.ce_anchor('admin.media.delete', 'media/hapus-syarat/'.$row->id_media.'/'.$row->id, '<i class="fa fa-trash"></i>', 'class="btn btn-sm btn-danger" onclick="return delete_confirm();"').'</td>
 							</tr>';
 							$no++;
 						}

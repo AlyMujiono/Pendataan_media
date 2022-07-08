@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Ormas extends CI_Controller {
+class Media extends CI_Controller {
 
 	public function __construct()
 	{
@@ -10,18 +10,18 @@ class Ormas extends CI_Controller {
 			redirect('user/login');
 			exit;
 		}
-		ce_active_menu('admin.ormas.view');
+		ce_active_menu('admin.media.view');
 
 		$this->load->library('upload');
 	}
 
 	public function index()
 	{
-		ce_hak_akses('admin.ormas.view');
+		ce_hak_akses('admin.media.view');
 
-		$data['halaman'] = 'ormas';
+		$data['halaman'] = 'media';
 		$data['javascript'] = array(
-			'js/js_datatable' => array('ajax_url' => base_url('ormas/ajax_data'))
+			'js/js_datatable' => array('ajax_url' => base_url('media/ajax_data'))
 		);
 		$data['header'] = 'Media<small>Index Data</small>';
 
@@ -30,7 +30,7 @@ class Ormas extends CI_Controller {
 
 	public function tambah()
 	{
-		ce_hak_akses('admin.ormas.add');
+		ce_hak_akses('admin.media.add');
 
 		if($this->input->method(TRUE)=='POST')
 		{
@@ -70,7 +70,7 @@ class Ormas extends CI_Controller {
         }
 			}
 
-			if($this->ormas_m->ormas_insert_data($post_data))
+			if($this->media_m->media_insert_data($post_data))
 			{
 				$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
 				ce_set_msg('success', $success);
@@ -79,10 +79,10 @@ class Ormas extends CI_Controller {
 				ce_set_msg('danger', $danger);
 			}
 
-			redirect('ormas');
+			redirect('media');
 		}
 
-		$data['halaman'] = 'ormas_tambah';
+		$data['halaman'] = 'media_tambah';
 		$data['header'] = 'Organisasi Masyarakat <small>Tambah Data</small>';
 
 		$this->load->view('template', $data);
@@ -90,9 +90,9 @@ class Ormas extends CI_Controller {
 
 	public function edit($id)
 	{
-		ce_hak_akses('admin.ormas.update');
+		ce_hak_akses('admin.media.update');
 
-		$ormas = $this->ormas_m->ormas_by_id($id);
+		$media = $this->media_m->media_by_id($id);
 		if($this->input->method(TRUE)=='POST')
 		{
 			$post_data['id_user'] = $this->session->userdata('id_user');
@@ -127,11 +127,11 @@ class Ormas extends CI_Controller {
         if ($this->upload->do_upload('lambang')){
 					$fileData = $this->upload->data();
 					$post_data['lambang'] = $fileData['file_name'];
-					unlink($config['upload_path'].$ormas->lambang);
+					unlink($config['upload_path'].$media->lambang);
         }
 			}
 
-			if($this->ormas_m->ormas_update_data($post_data, $id))
+			if($this->media_m->media_update_data($post_data, $id))
 			{
 				$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
 				ce_set_msg('success', $success);
@@ -140,11 +140,11 @@ class Ormas extends CI_Controller {
 				ce_set_msg('danger', $danger);
 			}
 
-			redirect('ormas');
+			redirect('media');
 		}
 
-		$data['ormas'] = $ormas;
-		$data['halaman'] = 'ormas_edit';
+		$data['media'] = $media;
+		$data['halaman'] = 'media_edit';
 		$data['header'] = 'Organisasi Masyarakat <small>Edit Data</small>';
 
 		$this->load->view('template', $data);
@@ -152,11 +152,11 @@ class Ormas extends CI_Controller {
 
 	public function anggota($id)
 	{
-		ce_hak_akses('admin.ormas.view');
+		ce_hak_akses('admin.media.view');
 
 		if($this->input->method(TRUE)=='POST')
 		{
-			$post_data['id_ormas'] = ((int)$id);
+			$post_data['id_media'] = ((int)$id);
 			$post_data['nama'] = $this->input->post('nama');
 			$post_data['jabatan'] = $this->input->post('jabatan');
 			$post_data['ttl'] = $this->input->post('ttl');
@@ -164,7 +164,7 @@ class Ormas extends CI_Controller {
 			$post_data['alamat'] = $this->input->post('alamat');
 			$post_data['status'] = $this->input->post('status');
 
-			if($this->ormas_m->ormas_insert_anggota($post_data))
+			if($this->media_m->media_insert_anggota($post_data))
 			{
 				$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
 				ce_set_msg('success', $success);
@@ -173,11 +173,11 @@ class Ormas extends CI_Controller {
 				ce_set_msg('danger', $danger);
 			}
 
-			redirect('ormas/anggota/'.$id);
+			redirect('media/anggota/'.$id);
 		}
 
-		$data['id_ormas'] = $id;
-		$data['anggotalist'] = $this->ormas_m->anggota_by_ormas($id);
+		$data['id_media'] = $id;
+		$data['anggotalist'] = $this->media_m->anggota_by_media($id);
 		$data['halaman'] = 'anggota';
 		$data['header'] = 'Organisasi Masyarakat <small>Anggota Media</small>';
 
@@ -186,11 +186,11 @@ class Ormas extends CI_Controller {
 
 	public function syarat($id)
 	{
-		ce_hak_akses('admin.ormas.view');
+		ce_hak_akses('admin.media.view');
 
 		if($this->input->method(TRUE)=='POST')
 		{
-			$post_data['id_ormas'] = ((int)$id);
+			$post_data['id_media'] = ((int)$id);
 			$post_data['nama'] = $this->input->post('nama');
 
 			if(!empty($_FILES['berkas']['tmp_name'])){
@@ -204,7 +204,7 @@ class Ormas extends CI_Controller {
         }
 			}
 
-			if($this->ormas_m->ormas_insert_syarat($post_data))
+			if($this->media_m->media_insert_syarat($post_data))
 			{
 				$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
 				ce_set_msg('success', $success);
@@ -213,59 +213,59 @@ class Ormas extends CI_Controller {
 				ce_set_msg('danger', $danger);
 			}
 
-			redirect('ormas/syarat/'.$id);
+			redirect('media/syarat/'.$id);
 		}
 
-		$data['id_ormas'] = $id;
-		$data['syaratlist'] = $this->ormas_m->syarat_by_ormas($id);
+		$data['id_media'] = $id;
+		$data['syaratlist'] = $this->media_m->syarat_by_media($id);
 		$data['halaman'] = 'syarat';
 		$data['header'] = 'Organisasi Masyarakat <small>Persyaratan</small>';
 
 		$this->load->view('template', $data);
 	}
 
-	public function hapus_syarat($id_ormas, $id)
+	public function hapus_syarat($id_media, $id)
 	{
-		ce_hak_akses('admin.ormas.delete');
+		ce_hak_akses('admin.media.delete');
 
-		$syarat = $this->db->get_where('syarat_ormas', ['id'=>$id])->row();
+		$syarat = $this->db->get_where('syarat_media', ['id'=>$id])->row();
 		@unlink('./assets/berkas/'.$syarat->berkas);
 
-		$this->ormas_m->syarat_delete_data($id);
+		$this->media_m->syarat_delete_data($id);
 		$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda pilih telah dihapus.';
 		ce_set_msg('success', $success);
 
-		redirect('ormas/syarat/'.$id_ormas);
+		redirect('media/syarat/'.$id_media);
 	}
 
-	public function hapus_anggota($id_ormas, $id)
+	public function hapus_anggota($id_media, $id)
 	{
-		ce_hak_akses('admin.ormas.delete');
+		ce_hak_akses('admin.media.delete');
 
-		$this->ormas_m->anggota_delete_data($id);
+		$this->media_m->anggota_delete_data($id);
 		$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda pilih telah dihapus.';
 		ce_set_msg('success', $success);
 
-		redirect('ormas/anggota/'.$id_ormas);
+		redirect('media/anggota/'.$id_media);
 	}
 
 	public function hapus($id)
 	{
-		ce_hak_akses('admin.ormas.delete');
+		ce_hak_akses('admin.media.delete');
 
-		$this->ormas_m->ormas_delete_data($id);
+		$this->media_m->media_delete_data($id);
 		$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda pilih telah dihapus.';
 		ce_set_msg('success', $success);
 
-		redirect('ormas');
+		redirect('media');
 	}
 
 	public function ajax_data()
 	{
-		ce_hak_akses('admin.ormas.view');
+		ce_hak_akses('admin.media.view');
 
 		$dataConfig = array(
-			'table' => 'ormas',
+			'table' => 'media',
 			'column_order' => array(null,'nama_organisasi','bentuk_organisasi','sifat_organisasi',null),
 			'column_search' => array('nama_organisasi','bentuk_organisasi','sifat_organisasi'),
 			'order' => array('id' => 'asc')
@@ -292,10 +292,10 @@ class Ormas extends CI_Controller {
 								Aksi <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu pull-right" role="menu">
-									<li>'.ce_anchor('admin.ormas.view', 'ormas/syarat/'.$field->id, '<i class="fa fa-legal"></i>Persyaratan').'</li>
+									<li>'.ce_anchor('admin.media.view', 'media/syarat/'.$field->id, '<i class="fa fa-legal"></i>Persyaratan').'</li>
 									<li class="divider"></li>
-									<li>'.ce_anchor('admin.ormas.update', 'ormas/edit/'.$field->id, '<i class="fa fa-edit"></i>Edit Data').'</li>
-									<li>'.ce_anchor('admin.ormas.delete', 'ormas/hapus/'.$field->id, '<i class="fa fa-trash"></i>Hapus Data', 'onclick="return delete_confirm();"').'</li>
+									<li>'.ce_anchor('admin.media.update', 'media/edit/'.$field->id, '<i class="fa fa-edit"></i>Edit Data').'</li>
+									<li>'.ce_anchor('admin.media.delete', 'media/hapus/'.$field->id, '<i class="fa fa-trash"></i>Hapus Data', 'onclick="return delete_confirm();"').'</li>
 								</ul>
 							</div>';
 						$row[] = $button;

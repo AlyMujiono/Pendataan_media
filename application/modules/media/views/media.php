@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="box-header with-border">
 				<h3 class="box-title">Daftar Media</h3>
 				<div class="box-tools">
-					<?= ce_anchor('admin.ormas.add', 'ormas/tambah', '<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary btn-sm"'); ?>
+					<?= ce_anchor('admin.media.add', 'media/tambah', '<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary btn-sm"'); ?>
 				</div>
 			</div>
 			<div class="box-body table-responsive no-padding">
@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<thead>
 						<tr>
 							<th style="width:10px;">#</th>
-							<th>Nama Ormas</th>
+							<th>Nama Media</th>
 							<th>Bentuk Organisasi</th>
 							<th>Sifat Organisasi</th>
 							<th>Verifikasi</th>
