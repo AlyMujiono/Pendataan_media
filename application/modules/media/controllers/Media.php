@@ -39,17 +39,13 @@ class Media extends CI_Controller {
 			$post_data['nama_media'] = $this->input->post('nama_media');
 			$post_data['website'] = $this->input->post('website');
 			$post_data['nama_perusahaan'] = $this->input->post('nama_perusahaan');
-			$post_data['no_ahuskt'] = $this->input->post('no_ahuskt');
-			$post_data['ttp'] = $this->input->post('ttp');
-			$post_data['notaris'] = $this->input->post('notaris');
-			$post_data['no_permohonan'] = $this->input->post('no_permohonan');
-			$post_data['sumber_dana'] = $this->input->post('sumber_dana');
+			$post_data['nik'] = $this->input->post('nik');
 			$post_data['no_npwp'] = $this->input->post('no_npwp');
 			$post_data['no_telp'] = $this->input->post('no_telp');
 			$post_data['alamat'] = $this->input->post('alamat');
-			$post_data['ketua'] = $this->input->post('ketua');
-			$post_data['sekretaris'] = $this->input->post('sekretaris');
-			$post_data['bendahara'] = $this->input->post('bendahara');
+			$post_data['nama_pendaftar'] = $this->input->post('nama_pendaftar');
+			$post_data['nib'] = $this->input->post('nib');
+			$post_data['kbli'] = $this->input->post('kbli');
 			if($this->session->userdata('level')!='member'){
 				$post_data['no_berlaku'] = $this->input->post('no_berlaku');
 				$post_data['tgl_berlaku'] = $this->input->post('tgl_berlaku');
@@ -59,14 +55,14 @@ class Media extends CI_Controller {
 				$post_data['status'] = abs((int)$this->input->post('status'));
 			}
 
-			if(!empty($_FILES['lambang']['tmp_name'])){
+			if(!empty($_FILES['ktp']['tmp_name'])){
         $config['upload_path']          = './assets/img/';
 				$config['allowed_types']        = 'jpg|jpeg|png|gif';
         $config['encrypt_name']        	= true;
         $this->upload->initialize($config);
-        if ($this->upload->do_upload('lambang')){
+        if ($this->upload->do_upload('ktp')){
 					$fileData = $this->upload->data();
-					$post_data['lambang'] = $fileData['file_name'];
+					$post_data['ktp'] = $fileData['file_name'];
         }
 			}
 
@@ -83,7 +79,7 @@ class Media extends CI_Controller {
 		}
 
 		$data['halaman'] = 'media_tambah';
-		$data['header'] = 'Organisasi Masyarakat <small>Tambah Data</small>';
+		$data['header'] = 'Media <small>Tambah Data</small>';
 
 		$this->load->view('template', $data);
 	}
@@ -99,17 +95,13 @@ class Media extends CI_Controller {
 			$post_data['nama_media'] = $this->input->post('nama_media');
 			$post_data['website'] = $this->input->post('website');
 			$post_data['nama_perusahaan'] = $this->input->post('nama_perusahaan');
-			$post_data['no_ahuskt'] = $this->input->post('no_ahuskt');
-			$post_data['ttp'] = $this->input->post('ttp');
-			$post_data['notaris'] = $this->input->post('notaris');
-			$post_data['no_permohonan'] = $this->input->post('no_permohonan');
-			$post_data['sumber_dana'] = $this->input->post('sumber_dana');
+			$post_data['nik'] = $this->input->post('nik');
 			$post_data['no_npwp'] = $this->input->post('no_npwp');
 			$post_data['no_telp'] = $this->input->post('no_telp');
 			$post_data['alamat'] = $this->input->post('alamat');
-			$post_data['ketua'] = $this->input->post('ketua');
-			$post_data['sekretaris'] = $this->input->post('sekretaris');
-			$post_data['bendahara'] = $this->input->post('bendahara');
+			$post_data['nama_pendaftar'] = $this->input->post('nama_pendaftar');
+			$post_data['nib'] = $this->input->post('nib');
+			$post_data['kbli'] = $this->input->post('kbli');
 			if($this->session->userdata('level')!='member'){
 				$post_data['no_berlaku'] = $this->input->post('no_berlaku');
 				$post_data['tgl_berlaku'] = $this->input->post('tgl_berlaku');
@@ -119,15 +111,15 @@ class Media extends CI_Controller {
 				$post_data['status'] = abs((int)$this->input->post('status'));
 			}
 
-			if(!empty($_FILES['lambang']['tmp_name'])){
+			if(!empty($_FILES['ktp']['tmp_name'])){
         $config['upload_path']          = './assets/img/';
 				$config['allowed_types']        = 'jpg|jpeg|png|gif';
         $config['encrypt_name']        	= true;
         $this->upload->initialize($config);
-        if ($this->upload->do_upload('lambang')){
+        if ($this->upload->do_upload('ktp')){
 					$fileData = $this->upload->data();
-					$post_data['lambang'] = $fileData['file_name'];
-					unlink($config['upload_path'].$media->lambang);
+					$post_data['ktp'] = $fileData['file_name'];
+					unlink($config['upload_path'].$media->ktp);
         }
 			}
 
@@ -145,41 +137,7 @@ class Media extends CI_Controller {
 
 		$data['media'] = $media;
 		$data['halaman'] = 'media_edit';
-		$data['header'] = 'Organisasi Masyarakat <small>Edit Data</small>';
-
-		$this->load->view('template', $data);
-	}
-
-	public function anggota($id)
-	{
-		ce_hak_akses('admin.media.view');
-
-		if($this->input->method(TRUE)=='POST')
-		{
-			$post_data['id_media'] = ((int)$id);
-			$post_data['nama'] = $this->input->post('nama');
-			$post_data['jabatan'] = $this->input->post('jabatan');
-			$post_data['ttl'] = $this->input->post('ttl');
-			$post_data['jk'] = $this->input->post('jk');
-			$post_data['alamat'] = $this->input->post('alamat');
-			$post_data['status'] = $this->input->post('status');
-
-			if($this->media_m->media_insert_anggota($post_data))
-			{
-				$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
-				ce_set_msg('success', $success);
-			} else {
-				$danger = '<h4><i class="icon fa fa-ban"></i>Ups!</h4> Data yang Anda masukan gagal tersimpan.';
-				ce_set_msg('danger', $danger);
-			}
-
-			redirect('media/anggota/'.$id);
-		}
-
-		$data['id_media'] = $id;
-		$data['anggotalist'] = $this->media_m->anggota_by_media($id);
-		$data['halaman'] = 'anggota';
-		$data['header'] = 'Organisasi Masyarakat <small>Anggota Media</small>';
+		$data['header'] = 'Media <small>Edit Data</small>';
 
 		$this->load->view('template', $data);
 	}
@@ -219,7 +177,7 @@ class Media extends CI_Controller {
 		$data['id_media'] = $id;
 		$data['syaratlist'] = $this->media_m->syarat_by_media($id);
 		$data['halaman'] = 'syarat';
-		$data['header'] = 'Organisasi Masyarakat <small>Persyaratan</small>';
+		$data['header'] = 'media <small>Persyaratan</small>';
 
 		$this->load->view('template', $data);
 	}
@@ -236,17 +194,6 @@ class Media extends CI_Controller {
 		ce_set_msg('success', $success);
 
 		redirect('media/syarat/'.$id_media);
-	}
-
-	public function hapus_anggota($id_media, $id)
-	{
-		ce_hak_akses('admin.media.delete');
-
-		$this->media_m->anggota_delete_data($id);
-		$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda pilih telah dihapus.';
-		ce_set_msg('success', $success);
-
-		redirect('media/anggota/'.$id_media);
 	}
 
 	public function hapus($id)

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2022 pada 09.55
+-- Waktu pembuatan: 11 Jul 2022 pada 08.28
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.3.33
 
@@ -91,18 +91,14 @@ CREATE TABLE `media` (
   `nama_media` varchar(200) NOT NULL,
   `website` varchar(200) NOT NULL,
   `nama_perusahaan` varchar(200) NOT NULL,
-  `no_ahuskt` varchar(200) NOT NULL,
-  `ttp` varchar(200) NOT NULL,
-  `notaris` varchar(255) NOT NULL,
-  `no_permohonan` varchar(200) NOT NULL COMMENT '7.	Nomor dan tanggal surat permohonan',
-  `sumber_dana` varchar(200) NOT NULL,
+  `nik` varchar(200) NOT NULL,
   `no_npwp` varchar(200) NOT NULL,
+  `nib` int(50) NOT NULL,
+  `kbli` int(50) NOT NULL,
+  `nama_pendaftar` varchar(50) NOT NULL,
   `no_telp` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
-  `ketua` varchar(200) NOT NULL,
-  `sekretaris` varchar(200) NOT NULL,
-  `bendahara` varchar(200) NOT NULL,
-  `lambang` varchar(200) NOT NULL,
+  `ktp` varchar(200) NOT NULL,
   `no_berlaku` varchar(200) NOT NULL,
   `tgl_berlaku` varchar(100) NOT NULL,
   `tgl_verifikasi` date DEFAULT NULL,
@@ -114,8 +110,8 @@ CREATE TABLE `media` (
 -- Dumping data untuk tabel `media`
 --
 
-INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `no_ahuskt`, `ttp`, `notaris`, `no_permohonan`, `sumber_dana`, `no_npwp`, `no_telp`, `alamat`, `ketua`, `sekretaris`, `bendahara`, `lambang`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
-('82808072022144618', 1, 'uhasas', 'Yayasan', 'Sosial kontrol dan Hukum', '4324342', 'fgdgddfg', 'gfdfdf', '12738212', 'fdfgd', '1286383', '121873', 'kuukhjhklhk', 'akshdjkashasd', 'lasdjlajsad', 'iuioaeowe', '', '36465', '24234', '2022-07-08', 1, 1);
+INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `nik`, `no_npwp`, `nib`, `kbli`, `nama_pendaftar`, `no_telp`, `alamat`, `ktp`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
+('37511072022092913', 1, 'fgffsdfsdf', 'sdsadsdsd', 'dfkajdadas', '23233231', '2321212', 221212, 34322323, 'ajdjak', '3423233', 'hjmkhjhjk', '222f8e12d0516dea14e3876137433d84.png', '2324', '24234', '2022-07-11', 1, 1);
 
 -- --------------------------------------------------------
 

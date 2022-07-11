@@ -1,5 +1,4 @@
 <div class="row">
-
   <div class="col-md-12">
     <div class="box box-solid box-primary">
       <div class="box-header with-border">
@@ -14,21 +13,21 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="nik_ktp" class="col-sm-2 control-label">NIK KTP <span class="text-danger">*</span></label>
+            <label for="nik" class="col-sm-2 control-label">NIK KTP <span class="text-danger">*</span></label>
             <div class="col-sm-8">
-              <input type="number" name="nik_ktp" class="form-control" id="nik_ktp" required>
+              <input type="number" name="nik" class="form-control" id="nik" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="no_hp" class="col-sm-2 control-label">Nomor Handphone / WA <span class="text-danger">*</span></label>
+            <label for="no_telp" class="col-sm-2 control-label">Nomor Handphone / WA <span class="text-danger">*</span></label>
             <div class="col-sm-8">
-              <input type="number" name="no_hp" class="form-control" id="no_hp" required>
+              <input type="number" name="no_telp" class="form-control" id="no_telp" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="foro_ktp" class="col-sm-2 control-label">Foto KTP</label>
+            <label for="ktp" class="col-sm-2 control-label">Foto KTP <span class="text-danger">*</span></label>
             <div class="col-sm-7">
-              <input type="file" name="foto_ktp" id="foto_ktp">
+              <input type="file" name="ktp" id="ktp">
               <span class="help-block">Hanya berkas bertipe JPG|PNG|GIF.</span>
             </div>
           </div>
@@ -51,9 +50,9 @@
                   </div>
               </div>
               <div class="form-group">
-                <label for="npwp" class="col-sm-2 control-label">NPWP Perusahaan <span class="text-danger">*</span></label>
+                <label for="no_npwp" class="col-sm-2 control-label">NPWP Perusahaan <span class="text-danger">*</span></label>
                   <div class="col-sm-8">
-                    <input type="number" name="npwp" class="form-control" id="npwp" required>
+                    <input type="number" name="no_npwp" class="form-control" id="no_npwp" required>
                   </div>
               </div>
               <div class="form-group">
@@ -110,12 +109,11 @@
                 </div>
               </div>
               <?php endif;?>
-            </div>
-            
+            </div> 
         </div>
         <div class="box-footer">
-            <?= anchor('media', '<i class="fa fa-chevron-left"></i> Kembali', 'class="btn btn-default"'); ?>
-              <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan</button>
+          <?= anchor('media', '<i class="fa fa-chevron-left"></i> Kembali', 'class="btn btn-default"'); ?>
+          <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan</button>
         </div>
       </form>
     </div>
