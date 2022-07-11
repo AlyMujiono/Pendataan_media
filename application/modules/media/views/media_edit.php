@@ -1,22 +1,4 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
-$bentukorganisasi = [
-  "Yayasan",
-	"Lembaga Swadaya Masyarakat",
-  "Lembaga Profesi",
-  "Lembaga Semi Pemerintah",
-  "Organisasi Masyarakat",
-  "Organisasi Kepemudaan"
-];
-$sifatorganisasi = [
-	"Sosial kontrol dan Hukum",
-  "Sosial Kemasyarakatan dan lingkungan hidup",
-  "Sosial Keagamaan",
-  "Kepemudaan"
-];
-?>
 <div class="row">
-
     <div class="col-md-12">
         <div class="box box-solid box-primary">
             <div class="box-header with-border">
