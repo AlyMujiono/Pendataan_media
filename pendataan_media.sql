@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jul 2022 pada 08.28
+-- Waktu pembuatan: 12 Jul 2022 pada 06.43
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.3.33
 
@@ -99,6 +99,7 @@ CREATE TABLE `media` (
   `no_telp` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
   `ktp` varchar(200) NOT NULL,
+  `tgl_daftar` varchar(25) NOT NULL,
   `no_berlaku` varchar(200) NOT NULL,
   `tgl_berlaku` varchar(100) NOT NULL,
   `tgl_verifikasi` date DEFAULT NULL,
@@ -110,8 +111,10 @@ CREATE TABLE `media` (
 -- Dumping data untuk tabel `media`
 --
 
-INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `nik`, `no_npwp`, `nib`, `kbli`, `nama_pendaftar`, `no_telp`, `alamat`, `ktp`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
-('37511072022092913', 1, 'fgffsdfsdf', 'sdsadsdsd', 'dfkajdadas', '23233231', '2321212', 221212, 34322323, 'ajdjak', '3423233', 'hjmkhjhjk', '222f8e12d0516dea14e3876137433d84.png', '2324', '24234', '2022-07-11', 1, 1);
+INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `nik`, `no_npwp`, `nib`, `kbli`, `nama_pendaftar`, `no_telp`, `alamat`, `ktp`, `tgl_daftar`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
+('23012072022113950', 37, 'fdffd', '2323', 'fdfdfd', '3343', '2222', 2332, 232, 'hjshs', '232323', '32323', '5fa6096db23b03181d0a0d22f2fa3190.jpeg', '2022-07-12', '3323', '3323', '2022-07-12', 1, 1),
+('37511072022092913', 37, 'fgffsdfsdf', 'sdsadsdsd', 'dfkajdadas', '23233231', '2321212', 221212, 34322323, 'ajdjak', '3423233', 'hjmkhjhjk', '222f8e12d0516dea14e3876137433d84.png', '', '2324', '24234', '2022-07-11', 1, 1),
+('69812072022102133', 38, '2321er', ',f,,f', 'werewe', '2323223', '231223', 3123, 232, 'sksk', '23213', 'ewqe', '62868dbdbf2e214c115e7f6d64dee71a.jpeg', '', '', '', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -199,7 +202,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `id_level`, `foto`, `username`, `password`, `nama`, `email`, `no_telp`, `alamat`, `blokir`) VALUES
 (1, 1, 'foto_admin.png', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'yogisparingga@gmail.com', '081366997008', 'Kp. Galanggang, Kec. Batujajar, Kab. Bandung Kulon', 0),
-(36, 6, 'avatar.png', 'tiwi', '8751139513877752980fb2996012af64', 'tiwi', '', '', '', 1);
+(36, 6, 'avatar.png', 'tiwi', '8751139513877752980fb2996012af64', 'tiwi', '', '', '', 0),
+(37, 1, 'avatar.png', '12345', '827ccb0eea8a706c4c34a16891f84e7b', 'Administrator', '', '', '', 0),
+(38, 6, 'avatar.png', '123', '202cb962ac59075b964b07152d234b70', 'ali', '', '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -298,13 +303,13 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT untuk tabel `syarat_media`
 --
 ALTER TABLE `syarat_media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -260,7 +260,7 @@ class User extends CI_Controller {
 					redirect('user/login');
 				}
 			} else {
-				$danger = '<h4><i class="icon fa fa-ban"></i>Ups!</h4> Username atau Password yang Anda masukan salah.';
+				$danger = '<h4><i class="icon fa fa-ban"></i>Ups!</h4> Username atau Kode OTP yang Anda masukan salah.';
 				ce_set_msg('danger', $danger);
 				redirect('user/login');
 			}

@@ -46,6 +46,7 @@ class Media extends CI_Controller {
 			$post_data['nama_pendaftar'] = $this->input->post('nama_pendaftar');
 			$post_data['nib'] = $this->input->post('nib');
 			$post_data['kbli'] = $this->input->post('kbli');
+			$post_data['tgl_daftar'] = $this->input->post('tgl_daftar');
 			if($this->session->userdata('level')!='member'){
 				$post_data['no_berlaku'] = $this->input->post('no_berlaku');
 				$post_data['tgl_berlaku'] = $this->input->post('tgl_berlaku');

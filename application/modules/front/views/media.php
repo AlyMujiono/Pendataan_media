@@ -17,6 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <th rowspan="2">Nama Perusahaan</th>
                       <th rowspan="2">Website</th>
                       <th rowspan="2">Alamat Perusahaan</th>
+                      <th rowspan="2">Tanggal Pendaftaran</th>
                       <th rowspan="2">Status</th>
                     </tr>
                   </thead>
@@ -29,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td><?=$row->nama_perusahaan;?></td>
                     <td><?=$row->website;?></td>
                     <td><?=$row->alamat.'<br>'.$row->no_telp;?></td>
+                    <td><?=$row->tgl_daftar;?></td>
                     <td><?=ce_boolean($row->status, '<span class="badge bg-danger">Non-Aktif</span>|<span class="badge bg-success">Aktif</span>').' '.ce_boolean($row->verifikasi, '|<span class="badge bg-success">Terverifikasi</span>');?></td>
                   </tr>
                   <?php endforeach;

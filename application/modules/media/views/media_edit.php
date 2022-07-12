@@ -85,6 +85,12 @@
                 <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $media->alamat; ?>" required>
               </div>
             </div>
+            <div class="form-group">
+                <label for="tgl_daftar" class="col-sm-2 control-label">Tanggal Pendaftaran<span class="text-danger">*</span></label>
+                  <div class="col-sm-8">
+                    <input type="date" name="tgl_daftar" class="form-control" id="tgl_daftar" value="<?= $media->tgl_daftar; ?>" required>
+                  </div>
+              </div>
             <?php if($this->session->userdata('level')!='member'):?>
             <div class="form-group">
               <label for="no_berlaku" class="col-sm-2 control-label">No. Berlaku STL <span class="text-danger">*</span></label>
