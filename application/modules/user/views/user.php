@@ -1,17 +1,17 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <div class="row">
 	<div class="col-md-12">
-		<?= ce_msg('success');?>
-		<?= ce_msg('danger');?>
+		<?= ce_msg('success'); ?>
+		<?= ce_msg('danger'); ?>
 		<div class="box box-default">
 			<div class="box-header with-border">
 				<h3 class="box-title">Daftar User</h3>
 				<div class="box-tools">
-					<?= ce_anchor('admin.user.add', 'user/tambah', '<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary btn-sm"');?>
+					<?= ce_anchor('admin.user.add', 'user/tambah', '<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary btn-sm"'); ?>
 				</div>
-            </div>
+			</div>
 			<div class="box-body table-responsive no-padding">
 				<table id="dataTable" class="table table-striped">
 					<thead>

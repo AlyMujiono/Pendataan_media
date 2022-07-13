@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <h2 class="accordion-header" id="flush-heading'.$row->id_faq.'">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse'.$row->id_faq.'" aria-expanded="false" aria-controls="flush-collapse'.$row->id_faq.'">'.$row->pertanyaan.'</button>
                               </h2>
-                              <div id="flush-collapse'.$row->id_faq.'" class="accordion-collapse collapse" aria-labelledby="flush-heading'.$row->id_faq.'" data-bs-parent="#accordionFlushExample">
+                              <div id="flush-collapse'.$row->id_faq.'" class="accordion-collapse collapse" aria-labelledby="flush-heading'.$row->id_faq.'" data-bs-parent="accordionFlushExample">
                               <div class="accordion-body">'.$row->jawaban.'</div>
                               </div>
                             </div>';

@@ -12,26 +12,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <table class="table table-bordered table-stripped datatable">
                   <thead>
                     <tr>
-                      <th rowspan="2"></th>
-                      <th rowspan="2">Nama Media</th>
-                      <th rowspan="2">Nama Perusahaan</th>
-                      <th rowspan="2">Website</th>
-                      <th rowspan="2">Alamat Perusahaan</th>
-                      <th rowspan="2">Tanggal Pendaftaran</th>
-                      <th rowspan="2">Status</th>
+                      <th style="width:10px;">No.</th>
+                      <th rowspan="2" style="text-align: center;">Nama Media</th>
+                      <th rowspan="2" style="text-align: center;">Nama Perusahaan</th>
+                      <th rowspan="2" style="text-align: center;">Website</th>
+                      <th rowspan="2" style="text-align: center;">Alamat Perusahaan</th>
+                      <th rowspan="2" style="text-align: center;">Tanggal Pendaftaran</th>
+                      <th rowspan="2" style="text-align: center;">Status</th>
                     </tr>
                   </thead>
                   <tbody>
                   <?php if($medialist):
                   foreach ($medialist as $row):?>
                   <tr>
-                    <td><img src="<?=base_url('assets/img/'.$row->ktp);?>" class="img-fluid img-thumbnail" width="50"></td>
+                    <th style="width:10px;"></th>
                     <td><?=$row->nama_media;?></td>
                     <td><?=$row->nama_perusahaan;?></td>
                     <td><?=$row->website;?></td>
-                    <td><?=$row->alamat.'<br>'.$row->no_telp;?></td>
-                    <td><?=$row->tgl_daftar;?></td>
-                    <td><?=ce_boolean($row->status, '<span class="badge bg-danger">Non-Aktif</span>|<span class="badge bg-success">Aktif</span>').' '.ce_boolean($row->verifikasi, '|<span class="badge bg-success">Terverifikasi</span>');?></td>
+                    <td><?=$row->alamat.'<br>telp : '.$row->no_telp;?></td>
+                    <td style="text-align: center;"><?=$row->tgl_daftar;?></td>
+                    <td style="text-align: center;"><?=ce_boolean($row->status, '<span class="badge bg-danger">Non-Aktif</span>|<span class="badge bg-success">Aktif</span>').' '.ce_boolean($row->verifikasi, '|<span class="badge bg-success">Terverifikasi</span>');?></td>
                   </tr>
                   <?php endforeach;
                   endif;?>

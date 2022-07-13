@@ -240,3 +240,8 @@ textarea.no-resize {
 .control-label {
     text-align: right !important;
 }
+
+.btn-info-11 {
+    background-color: #c87f0a;
+    border-color: #b17008;
+}

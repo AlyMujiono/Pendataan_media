@@ -27,7 +27,7 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">Foto KTP</label>
             <div class="col-sm-8">
-              <img src="<?=base_url('assets/img/'.$media->ktp);?>" class="img-thumbnail" width="300">
+              <img src="<?= base_url('assets/img/' . $media->ktp); ?>" class="img-thumbnail" width="300">
             </div>
           </div>
           <div class="form-group">
@@ -35,6 +35,12 @@
             <div class="col-sm-7">
               <input type="file" name="ktp" id="ktp">
               <span class="help-block">Hanya berkas bertipe JPG|PNG|GIF.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tgl_daftar" class="col-sm-2 control-label">Tanggal Pendaftaran<span class="text-danger">*</span></label>
+            <div class="col-sm-8">
+              <input type="date" name="tgl_daftar" class="form-control" id="tgl_daftar" value="<?= $media->tgl_daftar; ?>" required>
             </div>
           </div>
         </div>
@@ -70,55 +76,37 @@
             <div class="form-group">
               <label for="kbli" class="col-sm-2 control-label">KBLI <span class="text-danger">*</span></label>
               <div class="col-sm-8">
-                <input type="number" name="kbli" class="form-control" id="kbli" value="<?= $media->kbli; ?>" required>
+                <input type="textarea" name="kbli" class="form-control" id="kbli" value="<?= $media->kbli; ?>" required>
               </div>
             </div>
             <div class="form-group">
-              <label for="website" class="col-sm-2 control-label">Website <span class="text-danger">*</span></label>
+              <label for="website" class="col-sm-2 control-label">Website <span class="text-danger"></span></label>
               <div class="col-sm-8">
-                <input type="text" name="website" class="form-control" id="website" value="<?= $media->website; ?>" required>
+                <input type="text" name="website" class="form-control" id="website" value="<?= $media->website; ?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="alamat" class="col-sm-2 control-label">Alamat Perusahaan <span class="text-danger">*</span></label>
+              <label for="alamat" class="col-sm-2 control-label">Alamat Perusahaan <span class="text-danger"></span></label>
               <div class="col-sm-8">
-                <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $media->alamat; ?>" required>
+                <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $media->alamat; ?>">
               </div>
             </div>
-            <div class="form-group">
-                <label for="tgl_daftar" class="col-sm-2 control-label">Tanggal Pendaftaran<span class="text-danger">*</span></label>
-                  <div class="col-sm-8">
-                    <input type="date" name="tgl_daftar" class="form-control" id="tgl_daftar" value="<?= $media->tgl_daftar; ?>" required>
-                  </div>
+            <?php if ($this->session->userdata('level') != 'member') : ?>
+              <div class="form-group">
+                <label for="verifikasi" class="col-sm-2 control-label">Verifikasi</label>
+                <div class="col-sm-8">
+                  <label style="margin-right:10px;"><input type="radio" name="verifikasi" value="1" <?php if ($media->verifikasi == 1) echo 'checked'; ?>> Ya</label>
+                  <label><input type="radio" name="verifikasi" value="0" <?php if ($media->verifikasi == 0) echo 'checked'; ?>> Tidak</label>
+                </div>
               </div>
-            <?php if($this->session->userdata('level')!='member'):?>
-            <div class="form-group">
-              <label for="no_berlaku" class="col-sm-2 control-label">No. Berlaku STL <span class="text-danger">*</span></label>
-              <div class="col-sm-8">
-                <input type="text" name="no_berlaku" class="form-control" id="no_berlaku" value="<?= $media->no_berlaku; ?>" required>
+              <div class="form-group">
+                <label for="status" class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-8">
+                  <label style="margin-right:10px;"><input type="radio" name="status" value="1" <?php if ($media->status == 1) echo 'checked'; ?>> Aktif</label>
+                  <label><input type="radio" name="status" value="0" <?php if ($media->status == 0) echo 'checked'; ?>> Non-Aktif</label>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="tgl_berlaku" class="col-sm-2 control-label">Tgl. Berlaku STL <span class="text-danger">*</span></label>
-              <div class="col-sm-8">
-                <input type="text" name="tgl_berlaku" class="form-control" id="tgl_berlaku" value="<?= $media->tgl_berlaku; ?>" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="verifikasi" class="col-sm-2 control-label">Verifikasi</label>
-              <div class="col-sm-8">
-                <label style="margin-right:10px;"><input type="radio" name="verifikasi" value="1" <?php if($media->verifikasi==1) echo 'checked';?>> Ya</label>
-                <label><input type="radio" name="verifikasi" value="0" <?php if($media->verifikasi==0) echo 'checked';?>> Tidak</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="status" class="col-sm-2 control-label">Status</label>
-              <div class="col-sm-8">
-                <label style="margin-right:10px;"><input type="radio" name="status" value="1" <?php if($media->status==1) echo 'checked';?>> Aktif</label>
-                <label><input type="radio" name="status" value="0" <?php if($media->status==0) echo 'checked';?>> Non-Aktif</label>
-              </div>
-            </div>
-            <?php endif;?>
+            <?php endif; ?>
           </div>
           <div class="box-footer">
             <?= anchor('media', '<i class="fa fa-chevron-left"></i> Kembali', 'class="btn btn-default"'); ?>

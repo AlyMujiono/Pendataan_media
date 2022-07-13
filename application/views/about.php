@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <dt>Lisensi</dt>
                     <dd><?=$this->config->item('license_key');?></dd>
                     <dt>Developer</dt>
-                    <dd><a href="https://nusakoding.com" target="_blank">Nusakoding.com</a></dd>
+                    <dd><a href="https://nusakoding.com" target="_blank">Nusakoding.com</a> X Mahasiswa ITERA : Aly Mujiono and Husliana Pratiwi</dd>
                 </dl>
             </div>
         </div>
