@@ -245,3 +245,8 @@ textarea.no-resize {
     background-color: #c87f0a;
     border-color: #b17008;
 }
+
+.pop-up{
+    padding: 300px;
+    background-color: #b17008;
+}

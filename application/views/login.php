@@ -43,13 +43,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <?= ce_msg('danger', true); ?>
       <form action="" method="post">
         <div class="form-group has-feedback">
-          <input type="number" name="username" class="form-control" placeholder="Nomor Whatsapp" required>
+          <input type="number" name="no_telp" class="form-control" placeholder="Nomor Whatsapp" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         Minta kode <a href=""> OTP</a>
         <br>
         <div class="form-group has-feedback">
-          <input type="number" name="password" class="form-control" placeholder="Kode OTP" required>
+          <input type="number" name="otp" class="form-control" placeholder="Kode OTP" required>
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">

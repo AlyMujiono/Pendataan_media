@@ -274,8 +274,8 @@ class User extends CI_Controller
 		if ($this->input->method(TRUE) == 'POST') {
 			$level = $this->db->get_where('level', ['unikode' => 'member'])->row();
 			$post_data['id_level'] = $level->id_level;
-			$post_data['username'] = $this->input->post('username');
-			$post_data['password'] = md5($this->input->post('password'));
+			$post_data['no_telp'] = $this->input->post('no_telp');
+			$post_data['otp'] = md5($this->input->post('otp'));
 			$post_data['nama'] = $this->input->post('nama');
 			$post_data['foto'] = 'avatar.png';
 			$post_data['blokir'] = 1;

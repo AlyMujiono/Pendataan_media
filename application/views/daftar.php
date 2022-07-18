@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?= ce_msg('danger', true);?>
     <form action="" method="post">
       <div class="form-group has-feedback">
-        <input type="number" name="username" class="form-control" placeholder="Nomor Whatsapp" required>
+        <input type="number" name="no_telp" class="form-control" placeholder="Nomor Whatsapp" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <?php
