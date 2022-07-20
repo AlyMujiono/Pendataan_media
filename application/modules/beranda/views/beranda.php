@@ -16,10 +16,3 @@ $pesanmasuk = $this->db->order_by('id', 'DESC')->limit(10)->get('pesan')->result
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="pop-up">
-            <i class="fa fa-weixin" style="font-size: 30px"></i>
-        </div>
-    </div>
-</div>

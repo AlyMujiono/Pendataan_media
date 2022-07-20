@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -57,3 +57,4 @@ $route['download-berkas-rekomendasi/(:num)'] = 'front/download_berkas_rekomendas
 $route['faq'] = 'front/faq';
 $route['data-media'] = 'front/media';
 $route['page/(:num)'] = 'front/detail_halaman/$1';
+$route['pengaduan'] = 'front/pengaduan';

@@ -167,7 +167,7 @@ $usr = $this->user_m->user_by_id($this->session->userdata('id_user'));
         </div>
         <!-- /.content-wrapper -->
 
-        <footer class="main-footer">
+        <footer class="main-footer" style="text-align: center;">
             Copyright &copy; <?= date('Y'); ?> <?= anchor('', ce_opsi('nama_situs')); ?>. All rights
             reserved.
         </footer>

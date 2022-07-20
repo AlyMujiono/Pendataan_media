@@ -19,12 +19,6 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="no_telp" class="col-sm-2 control-label">Nomor Handphone / WA <span class="text-danger">*</span></label>
-            <div class="col-sm-8">
-              <input type="number" name="no_telp" class="form-control" id="no_telp" value="<?= $media->no_telp; ?>" required>
-            </div>
-          </div>
-          <div class="form-group">
             <label class="col-sm-2 control-label">Foto KTP</label>
             <div class="col-sm-8">
               <img src="<?= base_url('assets/img/' . $media->ktp); ?>" class="img-thumbnail" width="300">
@@ -108,10 +102,11 @@
               </div>
             <?php endif; ?>
           </div>
-          <div class="box-footer">
-            <?= anchor('media', '<i class="fa fa-chevron-left"></i> Kembali', 'class="btn btn-default"'); ?>
-            <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan</button>
-          </div>
+        </div>
+        <div class="box-footer box box-solid box-primary">
+          <?= anchor('media', '<i class="fa fa-chevron-left"></i> Kembali', 'class="btn btn-default"'); ?>
+          <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan</button>
+        </div>
       </form>
     </div>
   </div>

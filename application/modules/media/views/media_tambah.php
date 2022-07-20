@@ -19,12 +19,6 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="no_telp" class="col-sm-2 control-label">Nomor Handphone / WA <span class="text-danger">*</span></label>
-            <div class="col-sm-8">
-              <input type="number" name="no_telp" class="form-control" id="no_telp" required>
-            </div>
-          </div>
-          <div class="form-group">
             <label for="ktp" class="col-sm-2 control-label">Foto KTP <span class="text-danger">*</span></label>
             <div class="col-sm-7">
               <input type="file" name="ktp" id="ktp">
