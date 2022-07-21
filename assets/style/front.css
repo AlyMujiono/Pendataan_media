@@ -1,6 +1,6 @@
 body {
     /*  background-color: #f7ce0485; */
-    background-image: url("http://localhost/pendataan-media/assets/album/27.jpg");
+    background-image: url("http://localhost/sipendi/assets/album/2.jpg");
     background-repeat: repeat;
     padding-top: 80px;
     font-family: 'Trebuchet MS', sans-serif;
@@ -32,7 +32,7 @@ div.leaflet-interactive {
 }
 
 .navbarTop {
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -184,8 +184,49 @@ div.leaflet-interactive {
 /* ============ small devices .end// ============ */
 
 .welcome {
-    background-color: #0f51322e;
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.welcome::before {
+    content: '';
+    width: 1000%;
+    height: 200px;
+    left: 10px;
+    top: 70px;
+    position: center;
+    background: linear-gradient(#fa0000, #e2fb00);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.welcome::after {
+    content: '';
+    position: absolute;
+    background: #00458B;
+    inset: 3px;
+    border-radius: 5px;
+}
+
+.t {
+    position: absolute;
+    top: 20px;
+    z-index: 2;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
     text-align: center;
-    border-radius: 20px;
-    padding-bottom: 200px;
 }

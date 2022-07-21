@@ -5,8 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="row mb-4">
     <div class="col-md-12">
         <div class="welcome">
-            <h2 style="padding-top: 170px; font-family: 'Brush Script MT', cursive; font-size:40px;">Selamat Datang di Sistem Informasi Pendataan Media </h2>
-            <h2 style="font-family: 'Brush Script MT', cursive; font-size:40px;">Kota Lubuklinggau</h2>
+            <h2 class="t" style="color:rgb(254, 245, 245); top:40%;">Selamat Datang di Sistem Informasi Pendataan Media <br> Kota Lubuklinggau</h2>
         </div>
     </div>
 </div>

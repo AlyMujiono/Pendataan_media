@@ -19,7 +19,7 @@ class Front extends CI_Controller
 	{
 		$data['faqlist'] = $this->pengaturan_m->faq_get_all();
 		$data['halaman'] = 'faq';
-		$data['header'] = '<div class="bg-info text-white text-center p-4">
+		$data['header'] = '<div class="text-white text-center p-4">
 				<h1>FAQ</h1>
 				<p>Pertanyaan dan jawaban seputar persyaratan pengajuan</p>
 		</div>';
@@ -31,7 +31,7 @@ class Front extends CI_Controller
 	{
 		$data['medialist'] = $this->media_m->media_get_all_active();
 		$data['halaman'] = 'media';
-		$data['header'] = '<div class="bg-info text-white text-center p-4">
+		$data['header'] = '<div class="text-white text-center p-4">
 				<h1>Data Media</h1>
 				<p>Informasi data Media yang terdaftar di sistem kami</p>
 		</div>';
@@ -87,7 +87,7 @@ class Front extends CI_Controller
 		}
 
 		$data['halaman'] = 'pengaduan';
-		$data['header'] = '<div class="bg-info text-white text-center p-4">
+		$data['header'] = '<div class="text-white text-center p-4">
 				<h1>Layanan Pengaduan</h1>
 				<p>Anda dapat mengajukan pengaduan kepada kami</p>
 		</div>';
