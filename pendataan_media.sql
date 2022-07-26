@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Jul 2022 pada 08.27
+-- Waktu pembuatan: 26 Jul 2022 pada 10.30
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.3.33
 
@@ -95,6 +95,7 @@ CREATE TABLE `media` (
   `nama_pendaftar` varchar(50) NOT NULL,
   `no_telp` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
+  `no_perusahaan` int(20) NOT NULL,
   `ktp` varchar(200) NOT NULL,
   `tgl_daftar` varchar(25) NOT NULL,
   `no_berlaku` varchar(200) NOT NULL,
@@ -108,11 +109,13 @@ CREATE TABLE `media` (
 -- Dumping data untuk tabel `media`
 --
 
-INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `nik`, `no_npwp`, `nib`, `kbli`, `nama_pendaftar`, `no_telp`, `alamat`, `ktp`, `tgl_daftar`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
-('14620072022131858', 1, 'kompas', 'fdfsfsfdd', 'pt maju jaya', '82328932', '23232323', 222222222, '22222222222', 'ali', '', 'sfdsff', '3bda38b85738c6c4a79e4f84dc9e0aa1.jpg', '2022-07-20', '', '', '2022-07-20', 1, 1),
-('41120072022132001', 38, 'wsddddddddddd', '3rdfdf', 'ddddddddddd', '22222222222', '2222222222222222223', 2147483647, 'w2222222222222222222', 'sfdsf', '', 'dddd', 'b6ac46de211c6594faa3514b32534e70.jpg', '2022-07-20', '', '', NULL, 0, 0),
-('71419072022151106', 1, 'wqqewqw', 'mdkk', 'Pendataan Media', '1211111111111', '1213313', 2323232, '23232', 'ali', '23232', 'kddhh', '4e276dec2ee5a050c5444c1a5c003182.jpeg', '2022-07-19', '', '', '2022-07-19', 1, 1),
-('95320072022131156', 38, 'klqlwk', 'kmnxlm', 'kcfkkf', '23121', '13213424', 2147483647, '33333333', 'kskdls', '', 'ksl/dkd', '3bce3fdc159378b0e2d2e25dc388f436.jpg', '2022-07-20', '', '', NULL, 0, 0);
+INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `nik`, `no_npwp`, `nib`, `kbli`, `nama_pendaftar`, `no_telp`, `alamat`, `no_perusahaan`, `ktp`, `tgl_daftar`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
+('14620072022131858', 1, 'kompas', 'fdfsfsfdd', 'pt maju jaya', '82328932', '23232323', 222222222, '22222222222', 'ali', '', 'sfdsff', 0, '3bda38b85738c6c4a79e4f84dc9e0aa1.jpg', '2022-07-20', '', '', '2022-07-20', 1, 1),
+('36126072022141334', 1, 'hfhghg', 'gjhjhjh', 'hkkh', '868787', '467', 545465, 'jhh', ',kjhkjkhk', '', 'hjhkjkj', 7976, 'fbabe062eb2ccee1ac14364897780f92.jpg', '2022-07-26', '', '', '2022-07-26', 1, 1),
+('41120072022132001', 38, 'wsddddddddddd', '3rdfdf', 'ddddddddddd', '22222222222', '2222222222222222223', 2147483647, 'w2222222222222222222', 'sfdsf', '', 'dddd', 0, 'b6ac46de211c6594faa3514b32534e70.jpg', '2022-07-20', '', '', NULL, 0, 0),
+('71419072022151106', 1, 'wqqewqw', 'mdkk', 'Pendataan Media', '1211111111111', '1213313', 2323232, '23232', 'ali', '23232', 'kddhh', 0, '4e276dec2ee5a050c5444c1a5c003182.jpeg', '2022-07-19', '', '', '2022-07-19', 1, 1),
+('80126072022141215', 38, 'lhkjk', 'kjjhkjhk', 'jkkhkh', '878787', '87897', 687779, 'jhjh', 'fsdfsdf', '', 'jhjkhkh', 87989, 'aa77bcb234271ff8cd756b88b657efb6.jpg', '2022-07-26', '', '', NULL, 0, 0),
+('95320072022131156', 38, 'klqlwk', 'kmnxlm', 'kcfkkf', '23121', '13213424', 2147483647, '33333333', 'kskdls', '', 'ksl/dkd', 0, '3bce3fdc159378b0e2d2e25dc388f436.jpg', '2022-07-20', '', '', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -310,7 +313,7 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT untuk tabel `syarat_media`
 --
 ALTER TABLE `syarat_media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

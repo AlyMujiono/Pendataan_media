@@ -80,6 +80,12 @@
               <input type="text" name="alamat" class="form-control" id="alamat">
             </div>
           </div>
+          <div class="form-group">
+            <label for="no_perusahaan" class="col-sm-2 control-label">No. Telepon Perusahaan <span class="text-danger"></span></label>
+            <div class="col-sm-8">
+              <input type="text" name="no_perusahaan" class="form-control" id="no_perusahaan">
+            </div>
+          </div>
           <?php if ($this->session->userdata('level') != 'member') : ?>
             <div class="form-group">
               <label for="verifikasi" class="col-sm-2 control-label">Verifikasi</label>
