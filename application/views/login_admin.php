@@ -32,13 +32,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background: url(http://localhost/sipendi/assets/album/2.jpg);">
   <div class="login-box">
-    <div class="login-logo">
+    <div class="login-logo" style="color: white;">
       <b>Login</b>Admin
     </div>
     <!-- /.login-logo -->
-    <div class="login-box-body">
+    <div class="login-box-body" style="border-radius: 5px;">
       <p class="login-box-msg">Masuk untuk mulai sesi baru</p>
       <?= ce_msg('danger', true); ?>
       <form action="" method="post">

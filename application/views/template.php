@@ -143,7 +143,7 @@ $usr = $this->user_m->user_by_id($this->session->userdata('id_user'));
         <!-- =============================================== -->
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper ce-">
+        <div class="content-wrapper ce-" style="background: url(http://localhost/sipendi/assets/album/bgh.jpg);">
             <?php if (isset($header)) : ?>
                 <section class="content-header">
                     <h1><?= $header; ?></h1>

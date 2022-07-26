@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $config['hak_akses'] = array(
     //Modul Beranda
@@ -13,14 +13,6 @@ $config['hak_akses'] = array(
         'admin.media.add' => 'Tambah Data',
         'admin.media.update' => 'Edit Data',
         'admin.media.delete' => 'Hapus Data'
-    ),
-
-    //Halaman Statis
-    'Halaman Statis' => array(
-        'admin.halaman.view' => 'Lihat Data',
-        'admin.halaman.add' => 'Tambah Data',
-        'admin.halaman.update' => 'Edit Data',
-        'admin.halaman.delete' => 'Hapus Data'
     ),
 
     //Pesan Masuk
