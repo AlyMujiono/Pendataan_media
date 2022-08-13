@@ -121,6 +121,7 @@ class User extends CI_Controller
 
 		if ($this->input->method(TRUE) == 'POST') {
 			$post_data['username'] = $this->input->post('username');
+			$post_data['no_telp'] = $this->input->post('no_telp');
 			if ($this->input->post('password'))
 				$post_data['password'] = md5($this->input->post('password'));
 			$post_data['nama'] = $this->input->post('nama');

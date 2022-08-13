@@ -89,6 +89,7 @@ class Media extends CI_Controller
 		if ($this->input->method(TRUE) == 'POST') {
 			$post_data['id_user'] = $this->session->userdata('id_user');
 			$post_data['nama_media'] = $this->input->post('nama_media');
+			$post_data['no_telp'] = $this->input->post('no_telp');
 			$post_data['website'] = $this->input->post('website');
 			$post_data['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 			$post_data['nik'] = $this->input->post('nik');
@@ -117,6 +118,22 @@ class Media extends CI_Controller
 			}
 
 			if ($this->media_m->media_update_data($post_data, $id)) {
+				if($this->session->userdata('level')!='member'){
+					$user = $this->user_m->user_by_id($media->id_user);
+					if($post_data['verifikasi']!=0){
+						$pesan = "Hai *".$user->nama."*,
+Pengajuan berkas ormas anda telah *DITERIMA*. Jika masih ada kendala silakan hubungi admin kami di nomor whatsapp : *".ce_opsi('telepon_perusahaan')."*
+
+Terima kasih";				
+					} else {
+						$pesan = "Hai *".$user->nama."*,
+Pengajuan berkas ormas anda telah *DITOLAK*. Mohon perbaiki Kembali, jika masih ada kendala, silakan hubungi admin kami 
+di nomor whatsapp : *".ce_opsi('telepon_perusahaan')."*
+
+Terima kasih";
+					}
+					kirim_pesan($user->no_telp, $pesan);	
+				}
 				$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
 				ce_set_msg('success', $success);
 			} else {
@@ -167,7 +184,7 @@ class Media extends CI_Controller
 		$data['id_media'] = $id;
 		$data['syaratlist'] = $this->media_m->syarat_by_media($id);
 		$data['halaman'] = 'syarat';
-		$data['header'] = 'media <small>Persyaratan</small>';
+		$data['header'] = 'Media <small>Persyaratan</small>';
 
 		$this->load->view('template', $data);
 	}

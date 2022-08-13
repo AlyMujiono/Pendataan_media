@@ -102,6 +102,7 @@ $autoload['helper'] = array(
     'cs',
     'cookie',
     'file',
+    'wa',
     'inflector'
 );
 
