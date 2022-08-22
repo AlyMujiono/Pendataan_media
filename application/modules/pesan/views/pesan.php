@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<table id="dataTable" class="table table-striped">
 					<thead>
 						<tr>
-							<th style="width:10px;">#</th>
+							<th style="width:10px;">No.</th>
 							<th>Pengirim</th>
 							<th>No. Telepon</th>
 							<th>Subjek</th>
@@ -51,10 +51,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <!-- /.modal -->
 
 <script>
-function showBalasan(id){
-	$.get('<?=base_url('pesan/get-balasan');?>/'+id, function(result){
-		$('#modalContent').html(result);
-		$('#modalBalasan').modal('show');
-	});
-}
+	function showBalasan(id) {
+		$.get('<?= base_url('pesan/get-balasan'); ?>/' + id, function(result) {
+			$('#modalContent').html(result);
+			$('#modalBalasan').modal('show');
+		});
+	}
 </script>

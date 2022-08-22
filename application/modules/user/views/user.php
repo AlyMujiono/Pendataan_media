@@ -16,9 +16,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<table id="dataTable" class="table table-striped">
 					<thead>
 						<tr>
-							<th style="width:10px;">#</th>
+							<th style="width:10px;">No.</th>
 							<th></th>
-							<th>Nama</th>
 							<th>Username</th>
 							<th>Hak Akses</th>
 							<th style="width:10px;">Blokir</th>

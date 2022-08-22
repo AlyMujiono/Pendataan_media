@@ -37,7 +37,6 @@ class User extends CI_Controller
 			$post_data['id_level'] = abs((int)$this->input->post('id_level'));
 			$post_data['username'] = $this->input->post('username');
 			$post_data['password'] = md5($this->input->post('password'));
-			$post_data['nama'] = $this->input->post('nama');
 			$post_data['no_telp'] = $this->input->post('no_telp');
 			$post_data['blokir'] = abs((int)$this->input->post('blokir'));
 
@@ -81,7 +80,6 @@ class User extends CI_Controller
 			$post_data['username'] = $this->input->post('username');
 			if ($this->input->post('password'))
 				$post_data['password'] = md5($this->input->post('password'));
-			$post_data['nama'] = $this->input->post('nama');
 			$post_data['no_telp'] = $this->input->post('no_telp');
 			$post_data['blokir'] = abs((int)$this->input->post('blokir'));
 
@@ -124,7 +122,6 @@ class User extends CI_Controller
 			$post_data['no_telp'] = $this->input->post('no_telp');
 			if ($this->input->post('password'))
 				$post_data['password'] = md5($this->input->post('password'));
-			$post_data['nama'] = $this->input->post('nama');
 
 			if (!empty($_FILES['foto']['tmp_name'])) {
 				$config['upload_path']          = './assets/img/user/';
@@ -176,7 +173,7 @@ class User extends CI_Controller
 		$dataConfig = array(
 			'table' => 'user',
 			'column_order' => array(null, null, 'user.username', 'user.level', 'user.blokir', null),
-			'column_search' => array('user.nama', 'user.username'),
+			'column_search' => array('user.username'),
 			'join' => array(
 				array('level', 'user.id_level=level.id_level', 'left')
 			),
@@ -192,7 +189,6 @@ class User extends CI_Controller
 			$row = array();
 			$row[] = $no;
 			$row[] = '<img src="' . base_url('assets/img/user/' . $field->foto) . '" class="user-image" alt="avatar" width="45">';
-			$row[] = $field->nama;
 			$row[] = $field->username;
 			$row[] = $field->level;
 			$row[] = ce_ikon_boolean($field->blokir);
@@ -243,7 +239,7 @@ class User extends CI_Controller
 						'id_user' => $user->id_user,
 						'id_level' => $user->id_level,
 						'level' => $user->unikode,
-						'nama_user' => $user->nama,
+						'nama_user' => $user->username,
 						'tanggal_login' => time()
 					);
 					$this->session->set_userdata($log_data);
@@ -256,7 +252,7 @@ class User extends CI_Controller
 					redirect('user/login');
 				}
 			} else {
-				$danger = '<h4><i class="icon fa fa-ban"></i>Ups!</h4> Username atau Kode OTP yang Anda masukan salah.';
+				$danger = '<h4><i class="icon fa fa-ban"></i>Ups!</h4> Username atau Password yang Anda masukan salah.';
 				ce_set_msg('danger', $danger);
 				redirect('user/login');
 			}
@@ -276,8 +272,8 @@ class User extends CI_Controller
 			$level = $this->db->get_where('level', ['unikode' => 'member'])->row();
 			$post_data['id_level'] = $level->id_level;
 			$post_data['no_telp'] = $this->input->post('no_telp');
-			$post_data['otp'] = md5($this->input->post('otp'));
-			$post_data['nama'] = $this->input->post('nama');
+			$post_data['username'] = $this->input->post('username');
+			$post_data['password'] = md5($this->input->post('password'));
 			$post_data['foto'] = 'avatar.png';
 			$post_data['blokir'] = 1;
 
@@ -322,7 +318,7 @@ class User extends CI_Controller
 						'id_user' => $user->id_user,
 						'id_level' => $user->id_level,
 						'level' => $user->unikode,
-						'nama_user' => $user->nama,
+						'nama_user' => $user->username,
 						'tanggal_login' => time()
 					);
 					$this->session->set_userdata($log_data);
@@ -335,7 +331,7 @@ class User extends CI_Controller
 					redirect('user/login');
 				}
 			} else {
-				$danger = '<h4><i class="icon fa fa-ban"></i>Ups!</h4> Username atau Kode OTP yang Anda masukan salah.';
+				$danger = '<h4><i class="icon fa fa-ban"></i>Ups!</h4> Username atau Password yang Anda masukan salah.';
 				ce_set_msg('danger', $danger);
 				redirect('user/login_admin');
 			}

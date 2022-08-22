@@ -11,12 +11,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <form method="post" action="" enctype="multipart/form-data" class="form-horizontal">
                 <div class="box-body">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="nama">Nama Lengkap <span class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-sm-2 control-label" for="username">Username <span class="text-danger"></span></label>
                         <div class="col-sm-8">
                             <input type="text" name="username" class="form-control" id="username" placeholder="Username">

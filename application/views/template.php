@@ -109,7 +109,7 @@ $usr = $this->user_m->user_by_id($this->session->userdata('id_user'));
                                     <img src="<?= base_url('assets/img/user/' . $usr->foto); ?>" class="img-circle" alt="avatar">
 
                                     <p>
-                                        <?= $usr->nama . ' - ' . $usr->level; ?>
+                                        <?= $usr->username . ' - ' . $usr->level; ?>
                                         <small><?= mdate('Masuk pada %d %M %Y %H:%s %A', $this->session->userdata('tanggal_login')); ?></small>
                                     </p>
                                 </li>

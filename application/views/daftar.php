@@ -47,15 +47,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <input type="number" name="no_telp" class="form-control" placeholder="Nomor Whatsapp" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
-        <?php
-        //<div class="form-group has-feedback">
-        //<input type="password" name="password" class="form-control" placeholder="Password" required>
-        //<span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        //</div>
-        ?>
+        <div class="form-group has-feedback">
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
         <p>*Nama lengkap sesuai KTP</p>
         <div class="form-group has-feedback">
-          <input type="nama" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+          <input type="text" name="username" class="form-control" placeholder="Nama Lengkap" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="row">

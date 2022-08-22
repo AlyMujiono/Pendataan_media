@@ -118,21 +118,21 @@ class Media extends CI_Controller
 			}
 
 			if ($this->media_m->media_update_data($post_data, $id)) {
-				if($this->session->userdata('level')!='member'){
+				if ($this->session->userdata('level') != 'member') {
 					$user = $this->user_m->user_by_id($media->id_user);
-					if($post_data['verifikasi']!=0){
-						$pesan = "Hai *".$user->nama."*,
-Pengajuan berkas ormas anda telah *DITERIMA*. Jika masih ada kendala silakan hubungi admin kami di nomor whatsapp : *".ce_opsi('telepon_perusahaan')."*
+					if ($post_data['verifikasi'] != 0) {
+						$pesan = "Hallo *" . $user->username . "*,
+Pengajuan berkas media anda telah *DITERIMA*. Jika masih ada kendala silakan hubungi admin kami di nomor whatsapp : *" . ce_opsi('telepon_perusahaan') . "*
 
-Terima kasih";				
+Terima kasih";
 					} else {
-						$pesan = "Hai *".$user->nama."*,
-Pengajuan berkas ormas anda telah *DITOLAK*. Mohon perbaiki Kembali, jika masih ada kendala, silakan hubungi admin kami 
-di nomor whatsapp : *".ce_opsi('telepon_perusahaan')."*
+						$pesan = "Hallo *" . $user->username . "*,
+Pengajuan berkas media anda telah *DITOLAK*. Mohon perbaiki Kembali, jika masih ada kendala, silakan hubungi admin kami 
+di nomor whatsapp : *" . ce_opsi('telepon_perusahaan') . "*
 
 Terima kasih";
 					}
-					kirim_pesan($user->no_telp, $pesan);	
+					kirim_pesan($user->no_telp, $pesan);
 				}
 				$success = '<h4><i class="icon fa fa-check"></i>Berhasil!</h4> Data yang Anda masukan telah tersimpan.';
 				ce_set_msg('success', $success);

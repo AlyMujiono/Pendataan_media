@@ -43,13 +43,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <?= ce_msg('danger', true); ?>
       <form action="" method="post">
         <div class="form-group has-feedback">
-          <input type="number" name="no_telp" class="form-control" placeholder="Nomor Whatsapp" required>
+          <input type="text" name="username" class="form-control" placeholder="Username" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
-        Minta kode <a href=""> OTP</a>
-        <br>
         <div class="form-group has-feedback">
-          <input type="number" name="otp" class="form-control" placeholder="Kode OTP" required>
+          <input type="password" name="password" class="form-control" placeholder="Password" required>
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
@@ -58,7 +56,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="social-auth-links text-center">
               <p>- OR -</p>
             </div>
-            <a href="<?= base_url('user/login_admin'); ?>" class="btn btn-info btn-block"><span class="fa fa-user"></span> Login sebagai Admin</a>
+            <a href="<?= base_url('user/login_admin'); ?>" class="btn btn-info btn-block"><span class="fa fa-user"></span> Masuk Sebagai Admin</a>
             <br>
             <a href="<?= base_url('user/daftar'); ?>" class="btn btn-info btn-block"><span class="fa fa-user-plus"></span> Registrasi Akun Baru</a>
             <br>

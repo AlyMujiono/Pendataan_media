@@ -1,8 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<?= ce_msg('success');?>
-<?= ce_msg('danger');?>
+<?= ce_msg('success'); ?>
+<?= ce_msg('danger'); ?>
 
 <div class="row">
     <div class="col-md-12">
@@ -13,42 +13,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <form method="post" action="" enctype="multipart/form-data" class="form-horizontal">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="nama" class="col-sm-2 control-label">Nama Lengkap <span
-                                class="text-danger">*</span></label>
+                        <label for="username" class="col-sm-2 control-label">Username <span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap"
-                                value="<?= $user->nama;?>" required>
+                            <input type="text" name="username" class="form-control" id="username" placeholder="Username" value="<?= $user->username; ?>" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="username" class="col-sm-2 control-label">Username <span
-                                class="text-danger">*</span></label>
+                        <label for="no_telp" class="col-sm-2 control-label">Nomor WhatsApp <span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" name="username" class="form-control" id="username" placeholder="Username"
-                                value="<?= $user->username;?>" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="no_telp" class="col-sm-2 control-label">Nomor WhatsApp <span
-                                class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <input type="text" name="no_telp" class="form-control" id="no_telp" placeholder="Nomor WhatsApp"
-                                value="<?= $user->no_telp;?>" required>
+                            <input type="text" name="no_telp" class="form-control" id="no_telp" placeholder="Nomor WhatsApp" value="<?= $user->no_telp; ?>" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="password" name="password" class="form-control" id="password"
-                                placeholder="Password">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                             <i class="help-block">Kosongkan jika tidak ingin mengganti password</i>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="foto" class="col-sm-2 control-label">Foto</label>
                         <div class="col-sm-8">
-                            <p><img src="<?= base_url('assets/img/user/'.$user->foto);?>" class="img-thumbnail"
-                                    width="100"></p>
+                            <p><img src="<?= base_url('assets/img/user/' . $user->foto); ?>" class="img-thumbnail" width="100"></p>
                             <input type="file" name="foto" id="foto">
                             <i class="help-block">File sebelumnya (jika ada) akan diganti</i>
                         </div>
