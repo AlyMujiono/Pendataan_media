@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Agu 2022 pada 14.46
+-- Waktu pembuatan: 04 Okt 2022 pada 05.48
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.3.33
 
@@ -110,11 +110,9 @@ CREATE TABLE `media` (
 
 INSERT INTO `media` (`id`, `id_user`, `nama_media`, `website`, `nama_perusahaan`, `nik`, `no_npwp`, `nib`, `kbli`, `nama_pendaftar`, `no_telp`, `alamat`, `no_perusahaan`, `ktp`, `tgl_daftar`, `no_berlaku`, `tgl_berlaku`, `tgl_verifikasi`, `verifikasi`, `status`) VALUES
 ('14620072022131858', 1, 'kompas', 'fdfsfsfdd', 'pt maju jaya', '82328932', '23232323', 222222222, '22222222222', 'ali', '', 'sfdsff', 0, '3bda38b85738c6c4a79e4f84dc9e0aa1.jpg', '2022-07-20', '', '', '2022-07-20', 1, 1),
-('41120072022132001', 1, 'wsddddddddddd', '3rdfdf', 'ddddddddaa', '22222222222', '2222222222222222223', 2147483647, 'w2222222222222222222', 'sfdsf', '', 'dddd', 0, 'b6ac46de211c6594faa3514b32534e70.jpg', '2022-07-20', '', '', NULL, 0, 0),
-('71419072022151106', 1, 'wqqewqw', 'mdkk', 'Pendataan Media', '1211111111111', '1213313', 2323232, '23232', 'ali', '23232', 'kddhh', 0, '4e276dec2ee5a050c5444c1a5c003182.jpeg', '2022-07-19', '', '', '2022-07-19', 1, 1),
-('80126072022141215', 1, 'lhkjk', 'kjjhkjhk', 'jkkhkh', '878787', '87897', 687779, 'jhjh', 'fsdfsdf', '', 'jhjkhkh', 87989, 'aa77bcb234271ff8cd756b88b657efb6.jpg', '2022-07-26', '', '', '2022-08-08', 0, 0),
-('91908082022134800', 1, 'mmhmns', 'jjhjb', 'hjkhjg', '7657686', '7668786', 75676868, 'uy8786', 'skjksd,sd', '', '', 0, '8be21c0046341b6e849d41ccd2b18ae1.jpg', '2022-08-08', '', '', '2022-08-08', 0, 0),
-('95320072022131156', 1, 'klqlwk', 'kmnxlm', 'kcfkkf', '23121', '13213424', 2147483647, '33333333', 'kskdls', '', 'ksl/dkd', 0, '3bce3fdc159378b0e2d2e25dc388f436.jpg', '2022-07-20', '', '', '2022-08-08', 1, 0);
+('23526082022161922', 37, 'bbbb', 'kjjjj', 'bbb', '222', '2222', 2222, '2222', 'nnn', '', 'bbbb', 0, 'd8400ca9d8adc7b1a160c3b28ec31b7f.png', '2022-08-26', '', '', '2022-08-26', 1, 1),
+('40426082022161738', 37, 'kkkkk', 'kkkkkk', 'kkkkk', '3333', '3333', 3333, '3333', 'kkkk', '', 'nnn', 0, '9f10db4fee50f7a3f12e4741c80cd950.png', '2022-08-26', '', '', '2022-08-26', 1, 1),
+('51522082022230613', 37, 'kkkkk', '', 'kkkk', '435433', '2323232', 2222, '22222', 'kkkk', '', '', 0, 'faed0be6cbfc13ff238c8d07842fe862.jpg', '2022-08-22', '', '', '2022-08-22', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -140,7 +138,7 @@ INSERT INTO `opsi` (`id_opsi`, `kunci`, `nilai`) VALUES
 (5, 'nama_pengelola', ''),
 (6, 'no_sipa', ''),
 (7, 'email_perusahaan', 'kominfo@lubuklinggaukota.go.id'),
-(8, 'telepon_perusahaan', '08'),
+(8, 'telepon_perusahaan', '08xx-xxxx-xxxx'),
 (9, 'alamat_perusahaan', 'Jl. Garuda, Komplek Perkantoran Pemerintah Kota Lubuklinggau'),
 (10, 'logo', 'logo_1658908116.png'),
 (11, 'favicon', 'favicon_1658908481.png'),
@@ -203,25 +201,24 @@ CREATE TABLE `user` (
   `foto` varchar(50) NOT NULL DEFAULT 'avatar.png',
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `nama` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
   `no_telp` varchar(20) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `blokir` tinyint(1) NOT NULL DEFAULT 0,
-  `otp` int(10) NOT NULL
+  `kode_unik` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `id_level`, `foto`, `username`, `password`, `nama`, `email`, `no_telp`, `alamat`, `blokir`, `otp`) VALUES
-(1, 1, 'foto_admin.png', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'yogisparingga@gmail.com', '081366997008', 'Kp. Galanggang, Kec. Batujajar, Kab. Bandung Kulon', 0, 0),
-(36, 6, 'avatar.png', 'tiwi', '8751139513877752980fb2996012af64', 'tiwi', '', '', '', 0, 0),
-(37, 1, 'avatar.png', '12345', '827ccb0eea8a706c4c34a16891f84e7b', 'Administrator', '', '', '', 0, 0),
-(38, 6, 'avatar.png', '123', '202cb962ac59075b964b07152d234b70', 'ali', '', '085709589883', '', 0, 0),
-(42, 6, 'avatar.png', 'aliii', 'b6be14bceb32e2083e4162e4ccce2cd5', 'aliii', '', '0822', '', 0, 0),
-(43, 6, 'avatar.png', '097', '92daa86ad43a42f28f4bf58e94667c95', 'tiw', '', '085709589883', '', 0, 0);
+INSERT INTO `user` (`id_user`, `id_level`, `foto`, `username`, `password`, `email`, `no_telp`, `alamat`, `blokir`, `kode_unik`) VALUES
+(1, 1, 'foto_admin.png', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'yogisparingga@gmail.com', '081366997008', 'Kp. Galanggang, Kec. Batujajar, Kab. Bandung Kulon', 0, 0),
+(36, 6, 'avatar.png', 'tiwi', '8751139513877752980fb2996012af64', '', '', '', 0, 0),
+(37, 1, 'avatar.png', '12345', '827ccb0eea8a706c4c34a16891f84e7b', '', '', '', 0, 0),
+(38, 6, 'avatar.png', '123', '202cb962ac59075b964b07152d234b70', '', '085709589883', '', 0, 0),
+(48, 6, 'avatar.png', 'lia', '3b712de48137572f3849aabd5666a4e3', '', '082280564947', '', 0, 0),
+(49, 6, 'avatar.png', 'irwanto', '3b712de48137572f3849aabd5666a4e3', '', '085274915007', '', 0, NULL);
 
 --
 -- Indexes for dumped tables
@@ -326,7 +323,7 @@ ALTER TABLE `syarat_media`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
