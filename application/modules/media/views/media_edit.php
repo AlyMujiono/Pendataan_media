@@ -87,7 +87,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="no_perusahaan" class="col-sm-2 control-label">Alamat Perusahaan <span class="text-danger"></span></label>
+            <label for="no_perusahaan" class="col-sm-2 control-label">No. Telepon Perusahaan <span class="text-danger"></span></label>
             <div class="col-sm-8">
               <input type="text" name="no_perusahaan" class="form-control" id="no_perusahaan" value="<?= $media->no_perusahaan; ?>">
             </div>
